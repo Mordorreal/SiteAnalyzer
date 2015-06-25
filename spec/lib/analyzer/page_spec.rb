@@ -127,4 +127,10 @@ RSpec.describe SiteAnalyzer::Page do
       expect(page.all_titles.size).to be > 0
     end
   end
+  describe '#all_meta_description_content' do
+    let(:initial_values) { 'https://mail.ru' }
+    it 'return all description content as array' do
+      expect(page.all_meta_description_content.size).to be > 0
+    end
+  end
 end

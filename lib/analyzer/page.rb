@@ -124,5 +124,13 @@ module SiteAnalyzer
       @page.css('title').each { |tag| titles << tag.text }
       titles
     end
+
+    def all_meta_description_content
+      tags = []
+      @page.css("meta[name='description']").each do |t|
+        tags << t['content']
+      end
+      tags
+    end
   end
 end

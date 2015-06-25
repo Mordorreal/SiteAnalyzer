@@ -90,9 +90,31 @@ module SiteAnalyzer
     end
 
     def title_doubles
-      result = []
-      @site.all_titles.each do |title|
+      result = @site.all_titles
+      result -= result.uniq
+      result
+    end
+
+    def not_uniq_words_in_meta
+      all_words = []
+      arr = @site.all_descriptions
+      arr.each do |url_desc_cont|
+        url_desc_cont[0][1].scan(/\w+/).each do |word|
+          all_words << word
+        end
       end
+      all_words -= all_words.uniq
+      all_words.uniq
+    end
+
+    def meta_description_doubles
+      result = []
+      not_uniq_words_in_meta.each do |not_uniq_word|
+        arr.each do |url_desc_cont|
+          result << url_desc_cont if url_desc_cont[0][1].include? not_uniq_word
+        end
+      end
+      result
     end
   end
 end

@@ -59,9 +59,21 @@ RSpec.describe SiteAnalyzer::Report do
     end
   end
   describe '#title_doubles' do
-    it ' return array of page where titles double' do
-      pending 'Need to implement method'
+    it 'return array of pages where titles double' do
       expect(@report_savchuk.title_doubles).not_to eq nil
+      expect(@report_savchuk.title_doubles.size).to be == 0
+    end
+  end
+  describe '#not_uniq_words_in_meta' do
+    it 'return array with not uniq word in meta tag description' do
+      expect(@report_savchuk.not_uniq_words_in_meta).not_to eq nil
+      expect(@report_savchuk.not_uniq_words_in_meta).to eq []
+    end
+  end
+  describe '#meta_description_doubles' do
+    it 'return array of pages where description have doubles' do
+      expect(@report_savchuk.meta_description_doubles).not_to eq nil
+      expect(@report_savchuk.meta_description_doubles).to eq []
     end
   end
 end

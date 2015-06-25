@@ -38,5 +38,13 @@ module SiteAnalyzer
       end
       result
     end
+
+    def all_descriptions
+      result = []
+      @pages.each_pair do |url, page|
+        result << [url, page.all_meta_description_content]
+      end
+      result
+    end
   end
 end

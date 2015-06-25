@@ -24,4 +24,9 @@ RSpec.describe SiteAnalyzer::Site do
       expect(site.all_titles.size).to be > 0
     end
   end
+  describe '#all_descriptions' do
+    it 'return array [page_url, [description_content]]' do
+      expect(site.all_descriptions.size).to be > 0
+    end
+  end
 end
