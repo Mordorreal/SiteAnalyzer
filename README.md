@@ -1,6 +1,6 @@
 <a href="https://github.com/Mordorreal/SiteAnalyzer"><b>Site Analizer</b><a/>
 
-Site Analizer is an Ruby SEO site analizer.
+Site Analizer is a Ruby SEO site analizer gem.
 
 Site Analizer check site and make report for you.
 
@@ -24,7 +24,7 @@ Denis Savchuk <a href="mailto:denis@savchuk.space"><denis@savchuk.space></a>
 
 <b>Resources</b>
 
-    Homepage <a href="savchuk.space" target="_blank">savchuk.space</a>
+<a href="savchuk.space" target="_blank">savchuk.space</a>   Homepage
 
 <b>License</b>
 
