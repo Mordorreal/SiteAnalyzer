@@ -1,15 +1,15 @@
 # Tests of Site class
 require 'spec_helper'
-require 'analyzer'
+require 'site_analyzer'
 RSpec.describe SiteAnalyzer::Site do
-  subject(:site) { SiteAnalyzer::Site.new initial_values }
-  let(:initial_values) { 'https://mail.ru' }
+  subject(:site) { SiteAnalyzer::Site.new initial_values, 10 }
+  let(:initial_values) { 'http://yandex.ru' }
 
   describe '#all_site_pages(url)' do
     before do
       site.all_site_pages
     end
-    it 'reqursively get all pages of site' do
+    it 'recursively get all pages of site' do
       expect(site.pages).not_to eq nil
     end
   end

@@ -8,9 +8,23 @@ module SiteAnalyzer
     attr_reader :page_url, :titles
     def initialize(url)
       @page_url = url
-      @page = Nokogiri::HTML(open(url)) rescue nil
-      @site_url = Addressable::URI.parse(url).host
+      @page = get_page url
+      @site_url = get_domain url
       @titles = all_titles
+    end
+
+    def get_page(url)
+      return nil if url.nil?
+      timeout(10) { Nokogiri::HTML(open(url)) }
+    rescue
+      nil
+    end
+
+    def get_domain(url)
+      return nil if url.nil?
+      timeout(10) { Addressable::URI.parse(url).host }
+    rescue
+      nil
     end
 
     def title_good?

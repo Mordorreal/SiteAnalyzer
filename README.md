@@ -19,6 +19,15 @@ $ gem install site_analizer
 
 You might need administrator privileges on your system to install it.
 
+<b>How to use<b>
+
+require 'site_analyzer'
+SiteAnalyzer.add_site 'http://savchuk.space' # add site to list
+SiteAnalyzer.start # start creating of reports
+SiteAnalyzer.show_all_reports # show all reports in console
+SiteAnalyzer.show_report 5 # show report number 5 starting from 1 in console
+SiteAnalyzer.report[0].report # return Hash report
+
 <b>Author</b>
 
 Denis Savchuk <a href="mailto:denis@savchuk.space"><denis@savchuk.space></a>

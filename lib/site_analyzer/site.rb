@@ -3,17 +3,17 @@ module SiteAnalyzer
   # Create site object with all scans
   class Site
     attr_reader :main_url, :pages, :domain
-    def initialize(url, deep = 10, use_robot_txt = false)
+    def initialize(url, max_pages = 10, use_robot_txt = false)
       @main_url = url
       @pages = {}
-      @max_pages = deep
+      @max_pages = max_pages
       @domain = Addressable::URI.parse(url).host
       @use_robot_txt = use_robot_txt
       all_site_pages(url)
     end
 
     def robot_txt_allowed?(url)
-      Robotstxt.allowed?(url, '*')
+      Robotstxt.allowed?(url, '*') rescue nil
     end
 
     def all_site_pages(url = main_url)
@@ -34,7 +34,9 @@ module SiteAnalyzer
     end
 
     def redirection_off(url)
-      open(url).base_uri.to_s rescue nil
+      timeout(10) { open(url).base_uri.to_s }
+    rescue
+      nil
     end
 
     def all_titles

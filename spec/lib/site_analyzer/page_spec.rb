@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'analyzer'
+require 'site_analyzer'
 require 'rspec'
 # analizer/page.rb
 RSpec.describe SiteAnalyzer::Page do

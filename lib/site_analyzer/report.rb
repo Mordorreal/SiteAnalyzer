@@ -2,11 +2,11 @@ module SiteAnalyzer
   # Create report for site
   class Report
     attr_reader :site, :report
-    def initialize(site_url, deep, use_robot = false)
+    def initialize(site_url, max_pages, use_robot = false)
       @site_url = site_url
-      @deep = deep
+      @max_pages = max_pages
       @use_robot = use_robot
-      @site = Site.new(@site_url, @deep, @use_robot)
+      @site = Site.new(@site_url, @max_pages, @use_robot)
     end
 
     def make_report
@@ -28,7 +28,7 @@ module SiteAnalyzer
 
     def to_s
       return 'Report is empty' if @report.nil? || @report.empty?
-      puts "================Report for #{@site_url} with #{@deep} pages deep and robot check is #{@use_robot}================"
+      puts "================Report for #{@site_url} with #{@max_pages} pages max_pages and robot check is #{@use_robot}================"
       @report.each_pair do |key, value|
         puts "=====================================#{key}====================================="
         puts value

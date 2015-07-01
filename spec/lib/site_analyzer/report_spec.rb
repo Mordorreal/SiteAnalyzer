@@ -1,6 +1,6 @@
 # Tests of Report class
 require 'spec_helper'
-require 'analyzer'
+require 'site_analyzer'
 
 RSpec.describe SiteAnalyzer::Report do
   before(:each) do
