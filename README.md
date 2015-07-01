@@ -21,12 +21,12 @@ You might need administrator privileges on your system to install it.
 
 <b>How to use</b>
 
-require 'site_analyzer'
-SiteAnalyzer.add_site 'http://savchuk.space' # add site to list
-SiteAnalyzer.start # start creating of reports
-SiteAnalyzer.show_all_reports # show all reports in console
-SiteAnalyzer.show_report 5 # show report number 5 starting from 1 in console
-SiteAnalyzer.report[0].report # return Hash report
+require 'site_analyzer'<br>
+SiteAnalyzer.add_site 'http://savchuk.space' # add site to list<br>
+SiteAnalyzer.start # start creating of reports<br>
+SiteAnalyzer.show_all_reports # show all reports in console<br>
+SiteAnalyzer.show_report 5 # show report number 5 starting from 1 in console<br>
+SiteAnalyzer.report[0].report # return Hash report<br>
 
 <b>Author</b>
 
