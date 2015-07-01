@@ -1,8 +1,8 @@
-<a href="https://github.com/Mordorreal/SiteAnalyzer"><b>Site Analizer</b><a/>
+<a href="https://github.com/Mordorreal/SiteAnalyzer"><b>Site Analyzer</b><a/>
 
-Site Analizer is a Ruby SEO site analizer gem.
+Site Analyzer is a Ruby SEO site analizer gem.
 
-Site Analizer check site and make report for you.
+Site Analyzer check site and make report for you.
 
 <b>Requirements</b>
 
@@ -15,7 +15,7 @@ Site Analizer check site and make report for you.
 
 This library is intended to be installed via the RubyGems system.
 
-$ gem install site_analizer
+$ gem install site_analyzer
 
 You might need administrator privileges on your system to install it.
 
@@ -38,4 +38,4 @@ Denis Savchuk <a href="mailto:denis@savchuk.space"><denis@savchuk.space></a>
 
 <b>License</b>
 
-Copyright © 2015 Denis Savchuk, Site Analizer is released under the MIT license.
+Copyright © 2015 Denis Savchuk, SiteAnalyzer is released under the MIT license.
