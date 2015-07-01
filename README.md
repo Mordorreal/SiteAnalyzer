@@ -24,7 +24,7 @@ Denis Savchuk <a href="mailto:denis@savchuk.space"><denis@savchuk.space></a>
 
 <b>Resources</b>
 
-<a href="savchuk.space" target="_blank">savchuk.space</a>   Homepage
+   Homepage  <a href="savchuk.space" target="_blank">savchuk.space</a>
 
 <b>License</b>
 
