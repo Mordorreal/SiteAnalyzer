@@ -7,6 +7,7 @@ module SiteAnalyzer
   require 'nokogiri'
   require 'addressable/uri'
   require 'open-uri'
+  require 'timeout'
   class << self
     def new
       @instance = nil

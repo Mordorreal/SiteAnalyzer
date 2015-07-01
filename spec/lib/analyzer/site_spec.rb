@@ -1,6 +1,6 @@
 # Tests of Site class
 require 'spec_helper'
-require 'analyzer/site'
+require 'analyzer'
 RSpec.describe SiteAnalyzer::Site do
   subject(:site) { SiteAnalyzer::Site.new initial_values }
   let(:initial_values) { 'https://mail.ru' }
@@ -27,6 +27,13 @@ RSpec.describe SiteAnalyzer::Site do
   describe '#all_descriptions' do
     it 'return array [page_url, [description_content]]' do
       expect(site.all_descriptions.size).to be > 0
+    end
+  end
+  describe '#all_h2' do
+    it 'return array [page_url, [h2_text]]' do
+      expect(site.all_h2).to be
+      expect(site.all_h2.size).to be >=0
+      expect(site.all_h2).to be_an_instance_of Array
     end
   end
 end

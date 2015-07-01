@@ -46,5 +46,13 @@ module SiteAnalyzer
       end
       result
     end
+
+    def all_h2
+      result = []
+      @pages.each_pair do |url, page|
+        result << [url, page.h2]
+      end
+      result
+    end
   end
 end

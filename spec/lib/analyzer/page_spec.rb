@@ -1,5 +1,6 @@
 require 'spec_helper'
-require 'analyzer/page'
+require 'analyzer'
+require 'rspec'
 # analizer/page.rb
 RSpec.describe SiteAnalyzer::Page do
   subject(:page) { SiteAnalyzer::Page.new initial_values }
@@ -131,6 +132,12 @@ RSpec.describe SiteAnalyzer::Page do
     let(:initial_values) { 'https://mail.ru' }
     it 'return all description content as array' do
       expect(page.all_meta_description_content.size).to be > 0
+    end
+  end
+  describe '#h2' do
+    it 'return array of h2 tag text on page' do
+      expect(page.h2.size).to be >= 0
+      expect(page.h2).to be_an_instance_of Array
     end
   end
 end

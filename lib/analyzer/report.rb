@@ -5,22 +5,33 @@ module SiteAnalyzer
     def initialize(site_url, deep)
       @site_url = site_url
       @deep = deep
-    end
-
-    def start
       @site = Site.new(@site_url, @deep)
     end
 
-    def make_and_show_report
+    def make_report
       @report = {}
-      @report[:title_more_then_70_symbols_on] = check_titles_text_less_than_70
-      @report[:title_and_h1_have_doubles_on] = check_title_and_h1_for_doubles
-      @report[:meta_description_more_than_200_on] = check_meta_description_less_then_200
-      @report[:meta_keywords_tags_more_than_600_on] = check_meta_keywords_tags
+      @report[:title_more_then_70_symbols] = check_titles_text_less_than_70
+      @report[:title_and_h1_have_doubles] = check_title_and_h1_for_doubles
+      @report[:meta_description_more_than_200] = check_meta_description_less_then_200
+      @report[:meta_keywords_tags_more_than_600] = check_meta_keywords_tags
       @report[:dont_have_h2_tags] = check_h2
       @report[:pages_size_with_url] = pages_size
       @report[:code_more_then_text_on] = code_more
       @report[:a_tags_list] = a_tag_array
+      @report[:title_doubles] = title_doubles
+      @report[:meta_description_doubles] = meta_description_doubles
+      @report[:bad_url] = bad_url
+      @report[:h2_doubles] = h2_doubles
+      @report
+    end
+
+    def to_s
+      puts "=======================Report for #{@site_url} with #{@deep} pages deep======================="
+      @report.each_pair do |key, value|
+        puts "=====================================#{key}====================================="
+        puts value
+        puts '===================================================================================================='
+      end
     end
 
     def check_titles_text_less_than_70
@@ -90,27 +101,60 @@ module SiteAnalyzer
     end
 
     def title_doubles
-      result = @site.all_titles
-      result -= result.uniq
-      result
+      find_doubles @site.all_titles
     end
 
     def not_uniq_words_in_meta
+      find_not_uniq_words @site.all_descriptions
+    end
+
+    def meta_description_doubles
+      find_doubles @site.all_descriptions
+    end
+
+    def bad_url
+      result = []
+      a_tag_array.each do |url|
+        result << url if url[1].include? '?meta='
+      end
+      result
+    end
+
+    def h2_doubles
+      find_doubles(@site.all_h2)
+    end
+
+    def not_uniq_words_in_h2
+      find_not_uniq_words @site.all_h2
+    end
+
+    # in_array must be [[url_of_page, words_in_string_with_space],[next, same_element]]
+    def find_not_uniq_words(in_array)
       all_words = []
-      arr = @site.all_descriptions
-      arr.each do |url_desc_cont|
+      counter = {}
+      result = []
+      in_array.each do |url_desc_cont|
         url_desc_cont[0][1].scan(/\w+/).each do |word|
           all_words << word
         end
       end
-      all_words -= all_words.uniq
-      all_words.uniq
+      all_words.each do |word|
+        if counter[word]
+          counter[word] += 1
+        else
+          counter[word] = 1
+        end
+      end
+      counter.each_pair do |word, number|
+        result << word if number > 1
+      end
+      result
     end
-
-    def meta_description_doubles
+    # in_array must be [[url_of_page, words_in_string_with_space],[next, same_element]]
+    def find_doubles(in_array)
       result = []
-      not_uniq_words_in_meta.each do |not_uniq_word|
-        arr.each do |url_desc_cont|
+      find_not_uniq_words(in_array).each do |not_uniq_word|
+        in_array.each do |url_desc_cont|
           result << url_desc_cont if url_desc_cont[0][1].include? not_uniq_word
         end
       end

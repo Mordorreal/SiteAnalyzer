@@ -1,10 +1,14 @@
 module SiteAnalyzer
   # Get site page and provide metods for analyse
+  require 'nokogiri'
+  require 'addressable/uri'
+  require 'open-uri'
+  require 'timeout'
   class Page
     attr_reader :page_url, :titles
     def initialize(url)
       @page_url = url
-      @page = Nokogiri::HTML(open(url))
+      @page = Nokogiri::HTML(open(url)) rescue nil
       @site_url = Addressable::URI.parse(url).host
       @titles = all_titles
     end
@@ -131,6 +135,11 @@ module SiteAnalyzer
         tags << t['content']
       end
       tags
+    end
+    def h2
+      h2s = []
+      @page.css('h2').each { |tag| h2s << tag.text }
+      h2s
     end
   end
 end

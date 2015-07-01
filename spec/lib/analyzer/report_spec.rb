@@ -1,21 +1,23 @@
 # Tests of Report class
 require 'spec_helper'
-require 'analyzer/report'
+require 'analyzer'
+
 RSpec.describe SiteAnalyzer::Report do
   before(:each) do
     @report_savchuk = SiteAnalyzer::Report.new('https://mail.ru', 10)
-    @report_savchuk.start
   end
 
-  describe '#start' do
-    it 'parse site with provided deep' do
-      expect(@report_savchuk.site).not_to eq nil
+  describe '#make_report' do
+    it 'run all metods and generate report' do
+      @report_savchuk.make_report
+      expect(@report_savchuk.report).not_to eq nil
+      expect(@report_savchuk.report.size).to be > 0
     end
   end
-  describe '#make_and_show_report' do
-    it 'run all metods and generate report' do
-      @report_savchuk.make_and_show_report
-      expect(@report_savchuk.report).not_to eq nil
+  describe '#to_s' do
+    it 'generate report output in console' do
+      @report_savchuk.make_report
+      expect(@report_savchuk.to_s).to be
     end
   end
   describe '#check_titles_text_less_than_70' do
@@ -60,20 +62,55 @@ RSpec.describe SiteAnalyzer::Report do
   end
   describe '#title_doubles' do
     it 'return array of pages where titles double' do
-      expect(@report_savchuk.title_doubles).not_to eq nil
-      expect(@report_savchuk.title_doubles.size).to be == 0
+      expect(@report_savchuk.title_doubles).to be
+      expect(@report_savchuk.title_doubles.size).to be >= 0
     end
   end
   describe '#not_uniq_words_in_meta' do
     it 'return array with not uniq word in meta tag description' do
-      expect(@report_savchuk.not_uniq_words_in_meta).not_to eq nil
-      expect(@report_savchuk.not_uniq_words_in_meta).to eq []
+      expect(@report_savchuk.not_uniq_words_in_meta).to be
+      expect(@report_savchuk.not_uniq_words_in_meta.size).to be >= 0
     end
   end
   describe '#meta_description_doubles' do
     it 'return array of pages where description have doubles' do
-      expect(@report_savchuk.meta_description_doubles).not_to eq nil
-      expect(@report_savchuk.meta_description_doubles).to eq []
+      expect(@report_savchuk.meta_description_doubles).to be_an_instance_of Array
+      expect(@report_savchuk.meta_description_doubles).to be
+
+    end
+  end
+  describe '#bad_url' do
+    it 'find bad url and return array of it with page url' do
+      expect(@report_savchuk.bad_url.size).to be >= 0
+      expect(@report_savchuk.bad_url).to be_an_instance_of Array
+      expect(@report_savchuk.bad_url).to be
+    end
+  end
+  describe '#h2_doubles' do
+    it 'return array of pages if h2 doubles' do
+      expect(@report_savchuk.h2_doubles.size).to be >= 0
+      expect(@report_savchuk.h2_doubles).to be_an_instance_of Array
+      expect(@report_savchuk.h2_doubles).to be
+    end
+  end
+  describe '#not_uniq_words_in_h2' do
+    it 'return array of words' do
+      expect(@report_savchuk.not_uniq_words_in_h2.size).to be >= 0
+      expect(@report_savchuk.not_uniq_words_in_h2).to be_an_instance_of Array
+      expect(@report_savchuk.not_uniq_words_in_h2).to be
+    end
+  end
+  describe '#find_not_uniq_words(in_array)' do
+    let (:arr) { [['aport.ru', 'good wrong bad'],['mail.ru', 'hi privet'],['mail.ru/123', 'privet']] }
+    it 'find not uniq words in array of in_array must be [[url_of_page, words_in_string_with_space],[next, same_element]]' do
+      expect(@report_savchuk.find_not_uniq_words(arr).size).to be > 0
+    end
+  end
+  describe '#find_doubles(in_array)' do
+    let (:arr) { [['aport.ru', 'good wrong bad'],['mail.ru', 'hi privet'],['mail.ru/123', 'privet']] }
+    it 'find doubles in array and return array with page that have it' do
+      expect(@report_savchuk.find_doubles(arr).size).to be > 0
+      expect(@report_savchuk.find_doubles(arr)).to be_an_instance_of Array
     end
   end
 end
