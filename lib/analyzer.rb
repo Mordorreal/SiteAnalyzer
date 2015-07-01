@@ -8,6 +8,7 @@ module SiteAnalyzer
   require 'addressable/uri'
   require 'open-uri'
   require 'timeout'
+  require 'robotstxt'
   class << self
     def new
       @instance = nil

@@ -9,6 +9,7 @@ Site Analizer check site and make report for you.
     Ruby >= 1.8.7
     Nokogiri >= 1.6.6.2
     Addressable >= 2.3.8
+    Robotstxt >= 0.5.4
 
 <b>Installation</b>
 

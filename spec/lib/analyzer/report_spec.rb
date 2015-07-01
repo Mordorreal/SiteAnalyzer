@@ -20,6 +20,13 @@ RSpec.describe SiteAnalyzer::Report do
       expect(@report_savchuk.to_s).to be
     end
   end
+  describe 'robottxt gem test' do
+    let(:withrobot) { SiteAnalyzer::Report.new('https://mail.ru', 10, true) }
+    it 'generate report without pages with restriction' do
+      withrobot.make_report
+      expect(withrobot.to_s).to be
+    end
+  end
   describe '#check_titles_text_less_than_70' do
     it 'check all titles on all pages and return array with bad pages url' do
       expect(@report_savchuk.check_titles_text_less_than_70).not_to eq nil

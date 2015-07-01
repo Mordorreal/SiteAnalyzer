@@ -1,17 +1,23 @@
 module SiteAnalyzer
+  require 'robotstxt'
   # Create site object with all scans
   class Site
     attr_reader :main_url, :pages, :domain
-    def initialize(url, deep = 10)
+    def initialize(url, deep = 10, use_robot_txt = false)
       @main_url = url
       @pages = {}
       @max_pages = deep
       @domain = Addressable::URI.parse(url).host
+      @use_robot_txt = use_robot_txt
       all_site_pages(url)
     end
 
+    def robot_txt_allowed?(url)
+      Robotstxt.allowed?(url, '*')
+    end
+
     def all_site_pages(url = main_url)
-      return nil if @max_pages < 0 || redirection_off(url).nil?
+      return nil if @max_pages < 0 || redirection_off(url).nil? || (robot_txt_allowed?(url) if @use_robot_txt)
       @max_pages -= 1
       page = Page.new url
       urls_array = urls_of_pages(page)
