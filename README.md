@@ -19,7 +19,7 @@ $ gem install site_analyzer
 
 You might need administrator privileges on your system to install it.
 
-<b>How to use<b>
+<b>How to use</b>
 
 require 'site_analyzer'
 SiteAnalyzer.add_site 'http://savchuk.space' # add site to list
