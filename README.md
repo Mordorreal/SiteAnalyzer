@@ -22,7 +22,7 @@ You might need administrator privileges on your system to install it.
 <b>How to use</b>
 
 require 'site_analyzer'<br>
-SiteAnalyzer.add_site 'http://savchuk.space', 10, true # add site to list<br> scan only 10 first pages with robot.txt
+SiteAnalyzer.add_site 'http://savchuk.space', 10, true # add site to list scan only 10 first pages with robot.txt <br>
 SiteAnalyzer.start # start creating of reports<br>
 SiteAnalyzer.show_all_reports # show all reports in console<br>
 SiteAnalyzer.show_report 5 # show report number 5 starting from 1 in console<br>
