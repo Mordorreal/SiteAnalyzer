@@ -1,17 +1,12 @@
 # Main class for program
 module SiteAnalyzer
-  %w(page site report version).each do |file|
+  %w(page site report version open-uri-patching).each do |file|
     require "site_analyzer/#{file}"
   end
-  # require 'rubygems'
-  # require 'nokogiri'
-  # require 'addressable/uri'
-  # require 'open-uri'
-  # require 'timeout'
-  # require 'robotstxt'
+
   class << self
     attr_reader :report
-    def add_site(site_url, max_pages = 100, robottxt = false)
+    def add_site(site_url, max_pages = 10, robottxt = false)
       @report = []
       @report << SiteAnalyzer::Report.new(site_url, max_pages, robottxt)
     end

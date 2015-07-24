@@ -1,0 +1,247 @@
+DEBUG Site:http://savchuk.space: 2015-07-24 02:04:33 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:04:33 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 02:04:33 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: SiteAnalyzer::Page: #<SiteAnalyzer::Page:0x007fec4bb94710 @page_url="http://savchuk.space", @page=#<Nokogiri::HTML::Document:0x3ff625dca0e0 name="document" children=[#<Nokogiri::XML::DTD:0x3ff625dc6620 name="html">, #<Nokogiri::XML::Element:0x3ff625dc7638 name="html" children=[#<Nokogiri::XML::Element:0x3ff625dc3f88 name="body" children=[#<Nokogiri::XML::Element:0x3ff625dc3c68 name="p" children=[#<Nokogiri::XML::Text:0x3ff625dc3970 "http://savchuk.space">]>]>]>]>, @site_url="savchuk.space", @titles=[]>
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: 2015-07-24 02:04:33 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:04:33 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 02:04:33 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: SiteAnalyzer::Page: #<SiteAnalyzer::Page:0x007fec4bb10848 @page_url="http://savchuk.space", @page=#<Nokogiri::HTML::Document:0x3ff625d881a4 name="document" children=[#<Nokogiri::XML::DTD:0x3ff625d84e78 name="html">, #<Nokogiri::XML::Element:0x3ff625d85a58 name="html" children=[#<Nokogiri::XML::Element:0x3ff625d848c4 name="body" children=[#<Nokogiri::XML::Element:0x3ff625d84630 name="p" children=[#<Nokogiri::XML::Text:0x3ff625d843b0 "http://savchuk.space">]>]>]>]>, @site_url="savchuk.space", @titles=[]>
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: 2015-07-24 02:04:33 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:04:34 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 02:04:34 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: SiteAnalyzer::Page: #<SiteAnalyzer::Page:0x007fec4baa6268 @page_url="http://savchuk.space", @page=#<Nokogiri::HTML::Document:0x3ff625d52f18 name="document" children=[#<Nokogiri::XML::DTD:0x3ff625d5202c name="html">, #<Nokogiri::XML::Element:0x3ff625d52824 name="html" children=[#<Nokogiri::XML::Element:0x3ff625d51b7c name="body" children=[#<Nokogiri::XML::Element:0x3ff625d5194c name="p" children=[#<Nokogiri::XML::Text:0x3ff625d51758 "http://savchuk.space">]>]>]>]>, @site_url="savchuk.space", @titles=[]>
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: 2015-07-24 02:04:34 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:04:34 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 02:04:34 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: SiteAnalyzer::Page: #<SiteAnalyzer::Page:0x007fec4b7ce748 @page_url="http://savchuk.space", @page=#<Nokogiri::HTML::Document:0x3ff625be7a5c name="document" children=[#<Nokogiri::XML::DTD:0x3ff625bd4ac4 name="html">, #<Nokogiri::XML::Element:0x3ff625bd56cc name="html" children=[#<Nokogiri::XML::Element:0x3ff625bd43d0 name="body" children=[#<Nokogiri::XML::Element:0x3ff625b889bc name="p" children=[#<Nokogiri::XML::Text:0x3ff625b884d0 "http://savchuk.space">]>]>]>]>, @site_url="savchuk.space", @titles=[]>
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: 2015-07-24 02:04:34 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:04:34 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 02:04:34 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: SiteAnalyzer::Page: #<SiteAnalyzer::Page:0x007fec4b69c7f8 @page_url="http://savchuk.space", @page=#<Nokogiri::HTML::Document:0x3ff625b4e1cc name="document" children=[#<Nokogiri::XML::DTD:0x3ff625b437b8 name="html">, #<Nokogiri::XML::Element:0x3ff625b48f4c name="html" children=[#<Nokogiri::XML::Element:0x3ff625b42c14 name="body" children=[#<Nokogiri::XML::Element:0x3ff625b424a8 name="p" children=[#<Nokogiri::XML::Text:0x3ff625b3bb94 "http://savchuk.space">]>]>]>]>, @site_url="savchuk.space", @titles=[]>
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: 2015-07-24 02:05:28 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:05:29 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 02:05:29 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: SiteAnalyzer::Page: #<SiteAnalyzer::Page:0x007fe29e811ea0 @page_url="http://savchuk.space", @page=#<Nokogiri::HTML::Document:0x3ff14f408c6c name="document" children=[#<Nokogiri::XML::DTD:0x3ff14f4051d4 name="html">, #<Nokogiri::XML::Element:0x3ff14f4083c0 name="html" children=[#<Nokogiri::XML::Element:0x3ff14f404acc name="body" children=[#<Nokogiri::XML::Element:0x3ff14f4047fc name="p" children=[#<Nokogiri::XML::Text:0x3ff14f404518 "http://savchuk.space">]>]>]>]>, @site_url="savchuk.space", @titles=[]>
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: 2015-07-24 02:05:29 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:05:29 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 02:05:29 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: SiteAnalyzer::Page: #<SiteAnalyzer::Page:0x007fe29e794248 @page_url="http://savchuk.space", @page=#<Nokogiri::HTML::Document:0x3ff14f3c9dc8 name="document" children=[#<Nokogiri::XML::DTD:0x3ff14f3c7550 name="html">, #<Nokogiri::XML::Element:0x3ff14f3c9fd0 name="html" children=[#<Nokogiri::XML::Element:0x3ff14f3c6fc4 name="body" children=[#<Nokogiri::XML::Element:0x3ff14f3c6d80 name="p" children=[#<Nokogiri::XML::Text:0x3ff14f3c6b14 "http://savchuk.space">]>]>]>]>, @site_url="savchuk.space", @titles=[]>
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: 2015-07-24 02:05:29 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:05:29 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 02:05:29 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: SiteAnalyzer::Page: #<SiteAnalyzer::Page:0x007fe29e729010 @page_url="http://savchuk.space", @page=#<Nokogiri::HTML::Document:0x3ff14f39459c name="document" children=[#<Nokogiri::XML::DTD:0x3ff14f393714 name="html">, #<Nokogiri::XML::Element:0x3ff14f393f70 name="html" children=[#<Nokogiri::XML::Element:0x3ff14f393250 name="body" children=[#<Nokogiri::XML::Element:0x3ff14f393070 name="p" children=[#<Nokogiri::XML::Text:0x3ff14f392e90 "http://savchuk.space">]>]>]>]>, @site_url="savchuk.space", @titles=[]>
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: 2015-07-24 02:05:29 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:05:29 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 02:05:29 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: SiteAnalyzer::Page: #<SiteAnalyzer::Page:0x007fe29e715c68 @page_url="http://savchuk.space", @page=#<Nokogiri::HTML::Document:0x3ff14f38ab14 name="document" children=[#<Nokogiri::XML::DTD:0x3ff14f2138e4 name="html">, #<Nokogiri::XML::Element:0x3ff14f38a18c name="html" children=[#<Nokogiri::XML::Element:0x3ff14f213344 name="body" children=[#<Nokogiri::XML::Element:0x3ff14f213038 name="p" children=[#<Nokogiri::XML::Text:0x3ff14f212d90 "http://savchuk.space">]>]>]>]>, @site_url="savchuk.space", @titles=[]>
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: 2015-07-24 02:05:29 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:05:29 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 02:05:29 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: SiteAnalyzer::Page: #<SiteAnalyzer::Page:0x007fe29e320fb8 @page_url="http://savchuk.space", @page=#<Nokogiri::HTML::Document:0x3ff14f190174 name="document" children=[#<Nokogiri::XML::DTD:0x3ff14f18c9d4 name="html">, #<Nokogiri::XML::Element:0x3ff14f18d410 name="html" children=[#<Nokogiri::XML::Element:0x3ff14f18c524 name="body" children=[#<Nokogiri::XML::Element:0x3ff14f18c2f4 name="p" children=[#<Nokogiri::XML::Text:0x3ff14f18c0d8 "http://savchuk.space">]>]>]>]>, @site_url="savchuk.space", @titles=[]>
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: 2015-07-24 02:07:07 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:07:07 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 02:07:07 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: SiteAnalyzer::Page: #<SiteAnalyzer::Page:0x007f28bd1e1dc8 @page_url="http://savchuk.space", @page=#<Nokogiri::HTML::Document:0x3f945e8f0c28 name="document" children=[#<Nokogiri::XML::DTD:0x3f945e8ed17c name="html">, #<Nokogiri::XML::Element:0x3f945e8f0354 name="html" children=[#<Nokogiri::XML::Element:0x3f945e8eca9c name="body" children=[#<Nokogiri::XML::Element:0x3f945e8ec7a4 name="p" children=[#<Nokogiri::XML::Text:0x3f945e8ec4e8 "http://savchuk.space">]>]>]>]>, @site_url="savchuk.space", @titles=[]>
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: 2015-07-24 02:07:07 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:07:07 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 02:07:07 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: SiteAnalyzer::Page: #<SiteAnalyzer::Page:0x007f28bd162280 @page_url="http://savchuk.space", @page=#<Nokogiri::HTML::Document:0x3f945e8b0498 name="document" children=[#<Nokogiri::XML::DTD:0x3f945e8aef6c name="html">, #<Nokogiri::XML::Element:0x3f945e8afa0c name="html" children=[#<Nokogiri::XML::Element:0x3f945e8ae9b8 name="body" children=[#<Nokogiri::XML::Element:0x3f945e8ae684 name="p" children=[#<Nokogiri::XML::Text:0x3f945e8ae38c "http://savchuk.space">]>]>]>]>, @site_url="savchuk.space", @titles=[]>
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: 2015-07-24 02:07:07 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:07:07 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 02:07:07 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: SiteAnalyzer::Page: #<SiteAnalyzer::Page:0x007f28bd124728 @page_url="http://savchuk.space", @page=#<Nokogiri::HTML::Document:0x3f945e8921c8 name="document" children=[#<Nokogiri::XML::DTD:0x3f945e8913b8 name="html">, #<Nokogiri::XML::Element:0x3f945e891bc4 name="html" children=[#<Nokogiri::XML::Element:0x3f945e890f44 name="body" children=[#<Nokogiri::XML::Element:0x3f945e890d64 name="p" children=[#<Nokogiri::XML::Text:0x3f945e890b84 "http://savchuk.space">]>]>]>]>, @site_url="savchuk.space", @titles=[]>
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: 2015-07-24 02:07:07 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:07:07 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 02:07:07 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: SiteAnalyzer::Page: #<SiteAnalyzer::Page:0x007f28bd0e4a10 @page_url="http://savchuk.space", @page=#<Nokogiri::HTML::Document:0x3f945e8722d8 name="document" children=[#<Nokogiri::XML::DTD:0x3f945e70b19c name="html">, #<Nokogiri::XML::Element:0x3f945e70bcdc name="html" children=[#<Nokogiri::XML::Element:0x3f945e70ab34 name="body" children=[#<Nokogiri::XML::Element:0x3f945e70a6fc name="p" children=[#<Nokogiri::XML::Text:0x3f945e70a3c8 "http://savchuk.space">]>]>]>]>, @site_url="savchuk.space", @titles=[]>
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: 2015-07-24 02:07:07 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:07:07 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 02:07:07 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: SiteAnalyzer::Page: #<SiteAnalyzer::Page:0x007f28bcce90a0 @page_url="http://savchuk.space", @page=#<Nokogiri::HTML::Document:0x3f945e674634 name="document" children=[#<Nokogiri::XML::DTD:0x3f945e6706c4 name="html">, #<Nokogiri::XML::Element:0x3f945e6740d0 name="html" children=[#<Nokogiri::XML::Element:0x3f945e66bc64 name="body" children=[#<Nokogiri::XML::Element:0x3f945e66ba48 name="p" children=[#<Nokogiri::XML::Text:0x3f945e66b778 "http://savchuk.space">]>]>]>]>, @site_url="savchuk.space", @titles=[]>
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: 2015-07-24 02:09:14 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:09:14 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 02:09:14 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: SiteAnalyzer::Page: #<SiteAnalyzer::Page:0x007f7c33b2da70 @page_url="http://savchuk.space", @page=#<Nokogiri::HTML::Document:0x3fbe19d96a68 name="document" children=[#<Nokogiri::XML::DTD:0x3fbe19d93160 name="html">, #<Nokogiri::XML::Element:0x3fbe19d961a8 name="html" children=[#<Nokogiri::XML::Element:0x3fbe19d92904 name="body" children=[#<Nokogiri::XML::Element:0x3fbe19d9260c name="p" children=[#<Nokogiri::XML::Text:0x3fbe19d9233c "http://savchuk.space">]>]>]>]>, @site_url="savchuk.space", @titles=[]>
+DEBUG Site:http://savchuk.space: Nokogiri::XML::NodeSet: []
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: 2015-07-24 02:09:14 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:09:14 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 02:09:14 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: SiteAnalyzer::Page: #<SiteAnalyzer::Page:0x007f7c33aa4158 @page_url="http://savchuk.space", @page=#<Nokogiri::HTML::Document:0x3fbe19d51e40 name="document" children=[#<Nokogiri::XML::DTD:0x3fbe19d50cc0 name="html">, #<Nokogiri::XML::Element:0x3fbe19d517d8 name="html" children=[#<Nokogiri::XML::Element:0x3fbe19d504f0 name="body" children=[#<Nokogiri::XML::Element:0x3fbe19d4927c name="p" children=[#<Nokogiri::XML::Text:0x3fbe19d49060 "http://savchuk.space">]>]>]>]>, @site_url="savchuk.space", @titles=[]>
+DEBUG Site:http://savchuk.space: Nokogiri::XML::NodeSet: []
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: 2015-07-24 02:09:14 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:09:14 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 02:09:14 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: SiteAnalyzer::Page: #<SiteAnalyzer::Page:0x007f7c33a42d40 @page_url="http://savchuk.space", @page=#<Nokogiri::HTML::Document:0x3fbe19d21420 name="document" children=[#<Nokogiri::XML::DTD:0x3fbe19d200ac name="html">, #<Nokogiri::XML::Element:0x3fbe19d20e30 name="html" children=[#<Nokogiri::XML::Element:0x3fbe19d1f7b0 name="body" children=[#<Nokogiri::XML::Element:0x3fbe19d1f3f0 name="p" children=[#<Nokogiri::XML::Text:0x3fbe19d1f0a8 "http://savchuk.space">]>]>]>]>, @site_url="savchuk.space", @titles=[]>
+DEBUG Site:http://savchuk.space: Nokogiri::XML::NodeSet: []
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: 2015-07-24 02:09:14 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:09:15 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 02:09:15 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: SiteAnalyzer::Page: #<SiteAnalyzer::Page:0x007f7c336806f8 @page_url="http://savchuk.space", @page=#<Nokogiri::HTML::Document:0x3fbe19b400d4 name="document" children=[#<Nokogiri::XML::DTD:0x3fbe19b375d8 name="html">, #<Nokogiri::XML::Element:0x3fbe19b37fd8 name="html" children=[#<Nokogiri::XML::Element:0x3fbe19b36ed0 name="body" children=[#<Nokogiri::XML::Element:0x3fbe19b36aac name="p" children=[#<Nokogiri::XML::Text:0x3fbe19b36750 "http://savchuk.space">]>]>]>]>, @site_url="savchuk.space", @titles=[]>
+DEBUG Site:http://savchuk.space: Nokogiri::XML::NodeSet: []
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: 2015-07-24 02:09:15 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:09:15 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 02:09:15 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: SiteAnalyzer::Page: #<SiteAnalyzer::Page:0x007f7c3361f9c0 @page_url="http://savchuk.space", @page=#<Nokogiri::HTML::Document:0x3fbe19b0fa88 name="document" children=[#<Nokogiri::XML::DTD:0x3fbe19b0e96c name="html">, #<Nokogiri::XML::Element:0x3fbe19b0f420 name="html" children=[#<Nokogiri::XML::Element:0x3fbe19b0e318 name="body" children=[#<Nokogiri::XML::Element:0x3fbe19b0e020 name="p" children=[#<Nokogiri::XML::Text:0x3fbe19b07e64 "http://savchuk.space">]>]>]>]>, @site_url="savchuk.space", @titles=[]>
+DEBUG Site:http://savchuk.space: Nokogiri::XML::NodeSet: []
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: 2015-07-24 02:10:55 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:10:55 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 02:10:55 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: SiteAnalyzer::Page: #<SiteAnalyzer::Page:0x007fb26ac8de48 @page_url="http://savchuk.space", @page=#<Nokogiri::HTML::Document:0x3fd935646c54 name="document" children=[#<Nokogiri::XML::DTD:0x3fd93563f328 name="html">, #<Nokogiri::XML::Element:0x3fd9356463bc name="html" children=[#<Nokogiri::XML::Element:0x3fd93563ecac name="body" children=[#<Nokogiri::XML::Element:0x3fd93563e9c8 name="p" children=[#<Nokogiri::XML::Text:0x3fd93563e6e4 "http://savchuk.space">]>]>]>]>, @site_url="savchuk.space", @titles=[]>
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: Nokogiri::XML::NodeSet: []
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: 2015-07-24 02:10:55 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:10:55 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 02:10:55 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: SiteAnalyzer::Page: #<SiteAnalyzer::Page:0x007fb26ac5f3e0 @page_url="http://savchuk.space", @page=#<Nokogiri::HTML::Document:0x3fd93562f75c name="document" children=[#<Nokogiri::XML::DTD:0x3fd93562e80c name="html">, #<Nokogiri::XML::Element:0x3fd93562f0e0 name="html" children=[#<Nokogiri::XML::Element:0x3fd93562e30c name="body" children=[#<Nokogiri::XML::Element:0x3fd93562e0dc name="p" children=[#<Nokogiri::XML::Text:0x3fd93562bea4 "http://savchuk.space">]>]>]>]>, @site_url="savchuk.space", @titles=[]>
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: Nokogiri::XML::NodeSet: []
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: 2015-07-24 02:10:55 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:10:55 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 02:10:55 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: SiteAnalyzer::Page: #<SiteAnalyzer::Page:0x007fb26abfffa8 @page_url="http://savchuk.space", @page=#<Nokogiri::HTML::Document:0x3fd9355ff78c name="document" children=[#<Nokogiri::XML::DTD:0x3fd9355fd108 name="html">, #<Nokogiri::XML::Element:0x3fd9355fdd9c name="html" children=[#<Nokogiri::XML::Element:0x3fd9355fcb18 name="body" children=[#<Nokogiri::XML::Element:0x3fd9355fc884 name="p" children=[#<Nokogiri::XML::Text:0x3fd9355fc334 "http://savchuk.space">]>]>]>]>, @site_url="savchuk.space", @titles=[]>
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: Nokogiri::XML::NodeSet: []
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: 2015-07-24 02:10:55 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:10:55 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 02:10:55 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: SiteAnalyzer::Page: #<SiteAnalyzer::Page:0x007fb26a8b5258 @page_url="http://savchuk.space", @page=#<Nokogiri::HTML::Document:0x3fd93545a60c name="document" children=[#<Nokogiri::XML::DTD:0x3fd935476898 name="html">, #<Nokogiri::XML::Element:0x3fd935477874 name="html" children=[#<Nokogiri::XML::Element:0x3fd93546dea0 name="body" children=[#<Nokogiri::XML::Element:0x3fd93546dacc name="p" children=[#<Nokogiri::XML::Text:0x3fd93546d4c8 "http://savchuk.space">]>]>]>]>, @site_url="savchuk.space", @titles=[]>
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: Nokogiri::XML::NodeSet: []
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: 2015-07-24 02:10:55 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:10:56 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 02:10:56 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: SiteAnalyzer::Page: #<SiteAnalyzer::Page:0x007fb26a784ff0 @page_url="http://savchuk.space", @page=#<Nokogiri::HTML::Document:0x3fd9353c2500 name="document" children=[#<Nokogiri::XML::DTD:0x3fd9353bf7b0 name="html">, #<Nokogiri::XML::Element:0x3fd9353bfe2c name="html" children=[#<Nokogiri::XML::Element:0x3fd9353b83ac name="body" children=[#<Nokogiri::XML::Element:0x3fd9353b8050 name="p" children=[#<Nokogiri::XML::Text:0x3fd9353b1df4 "http://savchuk.space">]>]>]>]>, @site_url="savchuk.space", @titles=[]>
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: Nokogiri::XML::NodeSet: []
+DEBUG Site:http://savchuk.space: Array: []
+DEBUG Site:http://savchuk.space: 2015-07-24 02:25:42 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:25:42 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:25:42 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:25:42 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:27:42 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:27:42 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:27:43 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:27:43 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:29:02 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:29:03 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:29:03 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:29:03 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:29:03 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:30:30 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:30:30 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:30:30 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:30:30 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:30:31 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:34:02 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:34:02 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:34:02 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:34:02 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:34:03 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:34:41 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:34:41 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:34:41 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:34:41 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 02:34:42 +0300 add page http://savchuk.space to site with option: allowed by robot? 
+DEBUG Site:http://savchuk.space: 2015-07-24 12:01:44 +0300 add page http://savchuk.space to site with option: allowed by robot? true
+DEBUG Site:http://savchuk.space: 2015-07-24 12:01:44 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 12:01:44 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: 2015-07-24 12:01:44 +0300 add page http://savchuk.space to site with option: allowed by robot? true
+DEBUG Site:http://savchuk.space: 2015-07-24 12:01:44 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 12:01:44 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: 2015-07-24 12:01:44 +0300 add page http://savchuk.space to site with option: allowed by robot? true
+DEBUG Site:http://savchuk.space: 2015-07-24 12:01:44 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 12:01:44 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: 2015-07-24 12:01:44 +0300 add page http://savchuk.space to site with option: allowed by robot? true
+DEBUG Site:http://savchuk.space: 2015-07-24 12:01:44 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 12:01:44 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: 2015-07-24 12:01:44 +0300 add page http://savchuk.space to site with option: allowed by robot? true
+DEBUG Site:http://savchuk.space: 2015-07-24 12:01:44 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 12:01:44 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: 2015-07-24 12:01:44 +0300 add page http://savchuk.space to site with option: allowed by robot? true
+DEBUG Site:http://savchuk.space: 2015-07-24 12:01:44 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 12:01:44 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: 2015-07-24 12:01:44 +0300 add page http://savchuk.space to site with option: allowed by robot? true
+DEBUG Site:http://savchuk.space: 2015-07-24 12:01:44 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 12:01:44 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: 2015-07-24 12:01:44 +0300 add page http://savchuk.space to site with option: allowed by robot? true
+DEBUG Site:http://savchuk.space: 2015-07-24 12:01:44 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 12:01:44 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: 2015-07-24 12:01:44 +0300 add page http://savchuk.space to site with option: allowed by robot? true
+DEBUG Site:http://savchuk.space: 2015-07-24 12:01:44 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 12:01:44 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: 2015-07-24 12:03:58 +0300 add page http://savchuk.space to site with option: allowed by robot? true
+DEBUG Site:http://savchuk.space: 2015-07-24 12:03:58 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 12:03:58 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: 2015-07-24 12:03:58 +0300 add page http://savchuk.space to site with option: allowed by robot? true
+DEBUG Site:http://savchuk.space: 2015-07-24 12:03:58 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 12:03:58 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: 2015-07-24 12:03:58 +0300 add page http://savchuk.space to site with option: allowed by robot? true
+DEBUG Site:http://savchuk.space: 2015-07-24 12:03:58 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 12:03:58 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: 2015-07-24 12:03:58 +0300 add page http://savchuk.space to site with option: allowed by robot? true
+DEBUG Site:http://savchuk.space: 2015-07-24 12:03:58 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 12:03:58 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: 2015-07-24 12:03:58 +0300 add page http://savchuk.space to site with option: allowed by robot? true
+DEBUG Site:http://savchuk.space: 2015-07-24 12:03:58 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 12:03:58 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: 2015-07-24 12:03:58 +0300 add page http://savchuk.space to site with option: allowed by robot? true
+DEBUG Site:http://savchuk.space: 2015-07-24 12:03:58 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 12:03:58 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: 2015-07-24 12:03:58 +0300 add page http://savchuk.space to site with option: allowed by robot? true
+DEBUG Site:http://savchuk.space: 2015-07-24 12:03:58 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 12:03:58 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: 2015-07-24 12:03:58 +0300 add page http://savchuk.space to site with option: allowed by robot? true
+DEBUG Site:http://savchuk.space: 2015-07-24 12:03:58 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 12:03:58 +0300 page created and not nil true
+DEBUG Site:http://savchuk.space: 2015-07-24 12:03:58 +0300 add page http://savchuk.space to site with option: allowed by robot? true
+DEBUG Site:http://savchuk.space: 2015-07-24 12:03:58 +0300 Page url: http://savchuk.space Site url: savchuk.space
+DEBUG Site:http://savchuk.space: 2015-07-24 12:03:58 +0300 page created and not nil true

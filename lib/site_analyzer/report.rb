@@ -1,3 +1,5 @@
+require 'terminal-table'
+
 module SiteAnalyzer
   # Create report for site
   class Report
@@ -28,11 +30,16 @@ module SiteAnalyzer
 
     def to_s
       return 'Report is empty' if @report.nil? || @report.empty?
-      puts "================Report for #{@site_url} with #{@max_pages} pages max_pages and robot check is #{@use_robot}================"
+      header = Terminal::Table.new title: "Report for #{@site_url} with #{@max_pages} pages max_pages and robot check is #{@use_robot}"
+      puts header
       @report.each_pair do |key, value|
-        puts "=====================================#{key}====================================="
-        puts value
-        puts '===================================================================================================='
+        rows = []
+        value.each do |r|
+          r = [r] if r.class == String
+          rows << r
+        end
+        table = Terminal::Table.new title: key, rows: rows
+        puts table
       end
     end
 

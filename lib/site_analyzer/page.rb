@@ -2,10 +2,9 @@ module SiteAnalyzer
   # Get site page and provide metods for analyse
   require 'nokogiri'
   require 'addressable/uri'
-  require 'open-uri'
   require 'timeout'
   class Page
-    attr_reader :page_url, :titles
+    attr_reader :page_url, :titles, :page
     def initialize(url)
       @page_url = url
       @page = get_page url
@@ -13,30 +12,28 @@ module SiteAnalyzer
       @titles = all_titles
     end
 
+    def to_s
+      "Page url: #{@page_url} Site url: #{@site_url}"
+    end
+
     def get_page(url)
-      return nil if url.nil?
       timeout(10) { Nokogiri::HTML(open(url)) }
-    rescue
-      nil
     end
 
     def get_domain(url)
-      return nil if url.nil?
       timeout(10) { Addressable::URI.parse(url).host }
     rescue
-      nil
+      'Error with parsing by Addressable'
     end
 
     def title_good?
-      return false if (title = @page.search('//title').children) == 0
-      title.text.size < 70
+      @page.css('title').size == 1 &&  @page.css('title').text.size < 70
     end
     # true if title and h1 have no dublicates
     def title_and_h1_good?
-      out = @page.search('//title', '//h1').children
       arr = []
-      out.each { |node| arr << node.text }
-      arr.size > 1 || arr.uniq.size == arr.size
+      @page.css('h1').each { |node| arr << node.text }
+      @page.css('title').size == 1 && arr.uniq.size == arr.size
     end
     # true if metadescription less then 200 symbols
     def metadescription_good?
@@ -108,7 +105,7 @@ module SiteAnalyzer
     def all_a_tags_href
       tags = []
       @page.css('a').each do |node|
-        tags << node['href'] unless node['href'].nil? || node['href'].size == 0
+        tags << node['href']
       end
       tags
     end

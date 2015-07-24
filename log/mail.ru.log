@@ -1,0 +1,142 @@
+DEBUG Site:http://mail.ru: 2015-07-24 01:40:58 +0300 add page http://mail.ru to site with option: allowed by robot? 
+DEBUG Site:http://mail.ru: 2015-07-24 01:40:58 +0300 Page url: http://mail.ru Site url: mail.ru
+DEBUG Site:http://mail.ru: 2015-07-24 01:40:58 +0300 page created and not nil true
+DEBUG Site:http://mail.ru: 2015-07-24 01:41:47 +0300 add page http://mail.ru to site with option: allowed by robot? 
+DEBUG Site:http://mail.ru: 2015-07-24 01:41:47 +0300 Page url: http://mail.ru Site url: mail.ru
+DEBUG Site:http://mail.ru: 2015-07-24 01:41:47 +0300 page created and not nil true
+DEBUG Site:http://mail.ru: Array: []
+DEBUG Site:http://mail.ru: 2015-07-24 01:43:19 +0300 add page http://mail.ru to site with option: allowed by robot? 
+DEBUG Site:http://mail.ru: 2015-07-24 01:43:19 +0300 Page url: http://mail.ru Site url: mail.ru
+DEBUG Site:http://mail.ru: 2015-07-24 01:43:19 +0300 page created and not nil true
+DEBUG Site:http://mail.ru: Array: []
+DEBUG Site:http://mail.ru: 2015-07-24 01:44:56 +0300 add page http://mail.ru to site with option: allowed by robot? 
+DEBUG Site:http://mail.ru: 2015-07-24 01:44:56 +0300 Page url: http://mail.ru Site url: mail.ru
+DEBUG Site:http://mail.ru: 2015-07-24 01:44:56 +0300 page created and not nil true
+DEBUG Site:http://mail.ru: Array: []
+DEBUG Site:http://mail.ru: 2015-07-24 01:45:37 +0300 add page http://mail.ru to site with option: allowed by robot? 
+DEBUG Site:http://mail.ru: 2015-07-24 01:51:16 +0300 add page http://mail.ru to site with option: allowed by robot? 
+DEBUG Site:http://mail.ru: 2015-07-24 01:51:16 +0300 Page url: http://mail.ru Site url: mail.ru
+DEBUG Site:http://mail.ru: 2015-07-24 01:51:16 +0300 page created and not nil true
+DEBUG Site:http://mail.ru: Array: []
+DEBUG Site:http://mail.ru: 2015-07-24 01:55:21 +0300 add page http://mail.ru to site with option: allowed by robot? 
+DEBUG Site:http://mail.ru: 2015-07-24 01:55:21 +0300 Page url: http://mail.ru Site url: mail.ru
+DEBUG Site:http://mail.ru: 2015-07-24 01:55:21 +0300 page created and not nil true
+DEBUG Site:http://mail.ru: Array: []
+DEBUG Site:http://mail.ru: 2015-07-24 01:56:58 +0300 add page http://mail.ru to site with option: allowed by robot? 
+DEBUG Site:http://mail.ru: 2015-07-24 01:56:58 +0300 Page url: https://mail.ru Site url: mail.ru
+DEBUG Site:http://mail.ru: 2015-07-24 01:56:58 +0300 page created and not nil true
+DEBUG Site:http://mail.ru: Array: []
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 add page https://mail.ru to site with option: allowed by robot? true
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 Page url: https://mail.ru Site url: mail.ru
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 page created and not nil true
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 add page https://mail.ru to site with option: allowed by robot? true
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 Page url: https://mail.ru Site url: mail.ru
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 page created and not nil true
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 add page https://mail.ru to site with option: allowed by robot? true
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 Page url: https://mail.ru Site url: mail.ru
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 page created and not nil true
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 add page https://mail.ru to site with option: allowed by robot? true
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 Page url: https://mail.ru Site url: mail.ru
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 page created and not nil true
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 add page https://mail.ru to site with option: allowed by robot? true
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 Page url: https://mail.ru Site url: mail.ru
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 page created and not nil true
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 add page https://mail.ru to site with option: allowed by robot? true
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 Page url: https://mail.ru Site url: mail.ru
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 page created and not nil true
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 add page https://mail.ru to site with option: allowed by robot? true
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 Page url: https://mail.ru Site url: mail.ru
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 page created and not nil true
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 add page https://mail.ru to site with option: allowed by robot? true
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 Page url: https://mail.ru Site url: mail.ru
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 page created and not nil true
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 add page https://mail.ru to site with option: allowed by robot? true
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 Page url: https://mail.ru Site url: mail.ru
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 page created and not nil true
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 add page https://mail.ru to site with option: allowed by robot? true
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 Page url: https://mail.ru Site url: mail.ru
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 page created and not nil true
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 add page https://mail.ru to site with option: allowed by robot? true
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 Page url: https://mail.ru Site url: mail.ru
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 page created and not nil true
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 add page https://mail.ru to site with option: allowed by robot? true
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 Page url: https://mail.ru Site url: mail.ru
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 page created and not nil true
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 add page https://mail.ru to site with option: allowed by robot? true
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 Page url: https://mail.ru Site url: mail.ru
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 page created and not nil true
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 add page https://mail.ru to site with option: allowed by robot? true
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 Page url: https://mail.ru Site url: mail.ru
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 page created and not nil true
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 add page https://mail.ru to site with option: allowed by robot? true
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 Page url: https://mail.ru Site url: mail.ru
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:43 +0300 page created and not nil true
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:44 +0300 add page https://mail.ru to site with option: allowed by robot? true
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:44 +0300 Page url: https://mail.ru Site url: mail.ru
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:44 +0300 page created and not nil true
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:44 +0300 add page https://mail.ru to site with option: allowed by robot? true
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:44 +0300 Page url: https://mail.ru Site url: mail.ru
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:44 +0300 page created and not nil true
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:44 +0300 add page https://mail.ru to site with option: allowed by robot? true
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:44 +0300 Page url: https://mail.ru Site url: mail.ru
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:44 +0300 page created and not nil true
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:44 +0300 add page https://mail.ru to site with option: allowed by robot? true
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:44 +0300 Page url: https://mail.ru Site url: mail.ru
+DEBUG Site:https://mail.ru: 2015-07-24 12:01:44 +0300 page created and not nil true
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 add page https://mail.ru to site with option: allowed by robot? true
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 Page url: https://mail.ru Site url: mail.ru
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 page created and not nil true
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 add page https://mail.ru to site with option: allowed by robot? true
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 Page url: https://mail.ru Site url: mail.ru
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 page created and not nil true
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 add page https://mail.ru to site with option: allowed by robot? true
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 Page url: https://mail.ru Site url: mail.ru
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 page created and not nil true
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 add page https://mail.ru to site with option: allowed by robot? true
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 Page url: https://mail.ru Site url: mail.ru
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 page created and not nil true
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 add page https://mail.ru to site with option: allowed by robot? true
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 Page url: https://mail.ru Site url: mail.ru
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 page created and not nil true
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 add page https://mail.ru to site with option: allowed by robot? true
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 Page url: https://mail.ru Site url: mail.ru
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 page created and not nil true
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 add page https://mail.ru to site with option: allowed by robot? true
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 Page url: https://mail.ru Site url: mail.ru
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 page created and not nil true
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 add page https://mail.ru to site with option: allowed by robot? true
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 Page url: https://mail.ru Site url: mail.ru
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 page created and not nil true
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 add page https://mail.ru to site with option: allowed by robot? true
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 Page url: https://mail.ru Site url: mail.ru
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 page created and not nil true
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 add page https://mail.ru to site with option: allowed by robot? true
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 Page url: https://mail.ru Site url: mail.ru
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 page created and not nil true
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 add page https://mail.ru to site with option: allowed by robot? true
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 Page url: https://mail.ru Site url: mail.ru
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 page created and not nil true
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 add page https://mail.ru to site with option: allowed by robot? true
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 Page url: https://mail.ru Site url: mail.ru
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 page created and not nil true
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 add page https://mail.ru to site with option: allowed by robot? true
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 Page url: https://mail.ru Site url: mail.ru
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 page created and not nil true
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 add page https://mail.ru to site with option: allowed by robot? true
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 Page url: https://mail.ru Site url: mail.ru
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 page created and not nil true
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 add page https://mail.ru to site with option: allowed by robot? true
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 Page url: https://mail.ru Site url: mail.ru
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 page created and not nil true
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 add page https://mail.ru to site with option: allowed by robot? true
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 Page url: https://mail.ru Site url: mail.ru
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 page created and not nil true
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 add page https://mail.ru to site with option: allowed by robot? true
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 Page url: https://mail.ru Site url: mail.ru
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 page created and not nil true
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 add page https://mail.ru to site with option: allowed by robot? true
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 Page url: https://mail.ru Site url: mail.ru
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 page created and not nil true
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 add page https://mail.ru to site with option: allowed by robot? true
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 Page url: https://mail.ru Site url: mail.ru
+DEBUG Site:https://mail.ru: 2015-07-24 12:03:58 +0300 page created and not nil true

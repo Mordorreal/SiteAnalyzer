@@ -4,7 +4,7 @@ require 'site_analyzer'
 
 RSpec.describe SiteAnalyzer::Report do
   before(:each) do
-    @report_savchuk = SiteAnalyzer::Report.new('https://mail.ru', 10)
+    @report_savchuk = SiteAnalyzer::Report.new('https://mail.ru', 10, false)
   end
 
   describe '#make_report' do
@@ -21,7 +21,7 @@ RSpec.describe SiteAnalyzer::Report do
     end
   end
   describe 'robottxt gem test' do
-    let(:withrobot) { SiteAnalyzer::Report.new('https://mail.ru', 10, true) }
+    let(:withrobot) { SiteAnalyzer::Report.new('http://nash-farfor.ru', 10, true) }
     it 'generate report without pages with restriction' do
       withrobot.make_report
       expect(withrobot.to_s).to be
