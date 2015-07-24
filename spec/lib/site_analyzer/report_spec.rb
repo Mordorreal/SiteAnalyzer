@@ -10,7 +10,7 @@ RSpec.describe SiteAnalyzer::Report do
   describe '#make_report' do
     it 'run all metods and generate report' do
       @report_savchuk.make_report
-      expect(@report_savchuk.report).not_to eq nil
+      expect(@report_savchuk.report).to be
       expect(@report_savchuk.report.size).to be > 0
     end
   end
@@ -21,35 +21,35 @@ RSpec.describe SiteAnalyzer::Report do
     end
   end
   describe 'robottxt gem test' do
-    let(:withrobot) { SiteAnalyzer::Report.new('http://nash-farfor.ru', 10, true) }
+    let(:subject) { SiteAnalyzer::Report.new('http://nash-farfor.ru', 10, true) }
     it 'generate report without pages with restriction' do
-      withrobot.make_report
-      expect(withrobot.to_s).to be
+      subject.make_report
+      expect(subject.to_s).to be
     end
   end
   describe '#check_titles_text_less_than_70' do
     it 'check all titles on all pages and return array with bad pages url' do
-      expect(@report_savchuk.check_titles_text_less_than_70).not_to eq nil
+      expect(@report_savchuk.check_titles_text_less_than_70).to be
     end
   end
   describe '#check_title_and_h1_for_doubles' do
     it 'on page and return array with bad pages url' do
-      expect(@report_savchuk.check_title_and_h1_for_doubles).not_to eq nil
+      expect(@report_savchuk.check_title_and_h1_for_doubles).to be
     end
   end
   describe '#check_meta_description_less_then_200' do
     it 'and return array with bad pages url' do
-      expect(@report_savchuk.check_meta_description_less_then_200).not_to eq nil
+      expect(@report_savchuk.check_meta_description_less_then_200).to be
     end
   end
   describe '#check_meta_keywords_tags' do
     it 'that all words uniq and less than 600 and return array with bad pages' do
-      expect(@report_savchuk.check_meta_keywords_tags).not_to eq nil
+      expect(@report_savchuk.check_meta_keywords_tags).to be
     end
   end
   describe '#check_h2' do
     it 'that it persist on page and return array of bad pages' do
-      expect(@report_savchuk.check_h2).not_to eq nil
+      expect(@report_savchuk.check_h2).to be
     end
   end
   describe '#pages_size' do
@@ -82,41 +82,36 @@ RSpec.describe SiteAnalyzer::Report do
   describe '#meta_description_doubles' do
     it 'return array of pages where description have doubles' do
       expect(@report_savchuk.meta_description_doubles).to be_an_instance_of Array
-      expect(@report_savchuk.meta_description_doubles).to be
-
     end
   end
   describe '#bad_url' do
     it 'find bad url and return array of it with page url' do
       expect(@report_savchuk.bad_url.size).to be >= 0
       expect(@report_savchuk.bad_url).to be_an_instance_of Array
-      expect(@report_savchuk.bad_url).to be
     end
   end
   describe '#h2_doubles' do
     it 'return array of pages if h2 doubles' do
       expect(@report_savchuk.h2_doubles.size).to be >= 0
       expect(@report_savchuk.h2_doubles).to be_an_instance_of Array
-      expect(@report_savchuk.h2_doubles).to be
     end
   end
   describe '#not_uniq_words_in_h2' do
     it 'return array of words' do
       expect(@report_savchuk.not_uniq_words_in_h2.size).to be >= 0
       expect(@report_savchuk.not_uniq_words_in_h2).to be_an_instance_of Array
-      expect(@report_savchuk.not_uniq_words_in_h2).to be
     end
   end
   describe '#find_not_uniq_words(in_array)' do
     let (:arr) { [['aport.ru', 'good wrong bad'],['mail.ru', 'hi privet'],['mail.ru/123', 'privet']] }
     it 'find not uniq words in array of in_array must be [[url_of_page, words_in_string_with_space],[next, same_element]]' do
-      expect(@report_savchuk.find_not_uniq_words(arr).size).to be > 0
+      expect(@report_savchuk.find_not_uniq_words(arr).size).to be >= 0
     end
   end
   describe '#find_doubles(in_array)' do
     let (:arr) { [['aport.ru', 'good wrong bad'],['mail.ru', 'hi privet'],['mail.ru/123', 'privet']] }
     it 'find doubles in array and return array with page that have it' do
-      expect(@report_savchuk.find_doubles(arr).size).to be > 0
+      expect(@report_savchuk.find_doubles(arr).size).to be >= 0
       expect(@report_savchuk.find_doubles(arr)).to be_an_instance_of Array
     end
   end

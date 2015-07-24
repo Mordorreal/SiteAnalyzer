@@ -107,7 +107,7 @@ module SiteAnalyzer
       @page.css('a').each do |node|
         tags << node['href']
       end
-      tags
+      tags.compact
     end
 
     def wrong_a
@@ -131,7 +131,7 @@ module SiteAnalyzer
       @page.css('a').each do |node|
         tags << [node['href'], node['target'], node['rel']]
       end
-      tags
+      tags.compact
     end
 
     def all_titles

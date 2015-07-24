@@ -47,15 +47,18 @@ module SiteAnalyzer
       @pages_for_scan = []
       @pages.each do |page|
         page.home_a.each do |link|
-          @pages_for_scan << link unless @scanned_pages.include?(link) || link.include?('mailto:')
+          @pages_for_scan << link unless link.nil? || @scanned_pages.include?(link) || link.include?('mailto:') || link.end_with?('.jpg')
         end
       end
-      @pages_for_scan.empty? if @pages_for_scan.size == 0
+      @pages_for_scan.clear if @pages_for_scan.size == 0
     end
 
     def add_page(url)
       # @log.debug "#{Time.new} add page #{url} to site with option: allowed by robot? #{robot_txt_allowed?(url)}"
-      return unless robot_txt_allowed?(url)
+      unless robot_txt_allowed?(url)
+        @scanned_pages << url
+        return nil
+      end
       page = Page.new(url)
       # @log.debug "#{Time.new} #{page.to_s}"
       # @log.debug "#{Time.new} page created and not nil #{!page.nil?}"
@@ -86,6 +89,15 @@ module SiteAnalyzer
         result << [page.page_url, page.h2]
       end
       result
+    end
+
+    def all_a
+      result = []
+      @pages.each do |page|
+        tags = page.all_a_tags.compact
+        result << [page.page_url, tags[0], tags[1], tags[2]]
+      end
+      result.compact
     end
   end
 end
