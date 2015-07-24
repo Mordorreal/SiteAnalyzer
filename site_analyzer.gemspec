@@ -24,6 +24,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'nokogiri', '~>1'
   spec.add_development_dependency 'addressable', '~>2'
   spec.add_development_dependency 'robotstxt', '~>0'
-  spec.add_development_dependency 'log4r', '~>1'
   spec.add_development_dependency 'terminal-table', '~>1'
 end

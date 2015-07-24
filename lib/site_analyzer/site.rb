@@ -1,11 +1,9 @@
 module SiteAnalyzer
-  # require 'log4r'
   require 'robotstxt'
   require 'open-uri'
   require 'timeout'
   # Create site object with all scans
   class Site
-    # include Log4r
     attr_reader :main_url, :pages, :domain, :pages_for_scan, :max_pages
     def initialize(url, max_pages = 10, use_robot_txt = false)
       @main_url = url
@@ -17,14 +15,7 @@ module SiteAnalyzer
       @pages_for_scan = []
       add_page url
       scan_site!
-      # logging!
     end
-
-    # def logging!
-    #   @log = Logger.new "Site:#{@main_url}"
-    #   @log.outputters = FileOutputter.new('site', filename: "log/#{@domain}.log")
-    #   @log.level = DEBUG
-    # end
 
     def robot_txt_allowed?(url)
       if @use_robot_txt
@@ -54,14 +45,11 @@ module SiteAnalyzer
     end
 
     def add_page(url)
-      # @log.debug "#{Time.new} add page #{url} to site with option: allowed by robot? #{robot_txt_allowed?(url)}"
       unless robot_txt_allowed?(url)
         @scanned_pages << url
         return nil
       end
       page = Page.new(url)
-      # @log.debug "#{Time.new} #{page.to_s}"
-      # @log.debug "#{Time.new} page created and not nil #{!page.nil?}"
       @pages << page
       @max_pages -= 1
       @scanned_pages << url
