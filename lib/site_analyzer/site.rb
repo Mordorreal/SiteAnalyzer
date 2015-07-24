@@ -6,7 +6,7 @@ module SiteAnalyzer
   # Create site object with all scans
   class Site
     # include Log4r
-    attr_reader :main_url, :pages, :domain
+    attr_reader :main_url, :pages, :domain, :pages_for_scan, :max_pages
     def initialize(url, max_pages = 10, use_robot_txt = false)
       @main_url = url
       @pages = []
@@ -14,8 +14,9 @@ module SiteAnalyzer
       @domain = Addressable::URI.parse(url).host
       @use_robot_txt = use_robot_txt
       @scanned_pages = []
-      @page_for_scan = []
+      @pages_for_scan = []
       add_page url
+      scan_site!
       # logging!
     end
 
@@ -33,28 +34,23 @@ module SiteAnalyzer
       end
     end
 
-    def start_scan
-      while @page_for_scan.size > 0 || @max_pages > 0
-        fill_page_for_scan
-      end
-    end
-
-    def fill_page_for_scan
+    def scan_site!
       add_pages_for_scan!
-      while @page_for_scan.size > 0
-        add_page @page_for_scan.pop
-        return if @max_pages < 0
+      while @pages_for_scan.size > 0
+        add_page @pages_for_scan.pop
+        return if @max_pages <= 0
+        add_pages_for_scan!
       end
     end
 
     def add_pages_for_scan!
-      @page_for_scan = []
+      @pages_for_scan = []
       @pages.each do |page|
         page.home_a.each do |link|
-          @page_for_scan << link unless @scanned_pages.include?(link) || link.include?('mailto:')
+          @pages_for_scan << link unless @scanned_pages.include?(link) || link.include?('mailto:')
         end
       end
-      @page_for_scan.empty? if @page_for_scan.size == 0
+      @pages_for_scan.empty? if @pages_for_scan.size == 0
     end
 
     def add_page(url)

@@ -35,7 +35,17 @@ RSpec.describe SiteAnalyzer::Site do
   end
   describe '#add_pages_for_scan!' do
     it 'add pages for scan to @pages_for_scan array' do
-
+      subject.add_page 'https://mail.ru'
+      subject.add_pages_for_scan!
+      expect(subject.pages_for_scan.size).to be > 1
+    end
+  end
+  describe '#scan_site!' do
+    it 'using @pages_for_scan scan this pages' do
+      subject.add_page 'http://www.placewoman.ru/'
+      subject.scan_site!
+      expect(subject.max_pages).to eq 0
+      expect(subject.pages.size).to eq 10
     end
   end
 end
