@@ -7,7 +7,7 @@ module SiteAnalyzer
   class << self
     attr_reader :report
     def add_site(site_url, max_pages = 10, robottxt = false)
-      @report = []
+      @report ||= []
       @report << SiteAnalyzer::Report.new(site_url, max_pages, robottxt)
     end
 

@@ -4,7 +4,7 @@ require 'site_analyzer'
 
 RSpec.describe SiteAnalyzer::Report do
   before(:each) do
-    @report_savchuk = SiteAnalyzer::Report.new('https://mail.ru', 10, false)
+    @report_savchuk = SiteAnalyzer::Report.new('http://savchuk.space', 10, false)
   end
 
   describe '#make_report' do
@@ -59,7 +59,7 @@ RSpec.describe SiteAnalyzer::Report do
   end
   describe '#code_more' do
     it 'return array with url of pages where code more then text' do
-      expect(@report_savchuk.code_more.size).to be > 0
+      expect(@report_savchuk.code_more).to be
     end
   end
   describe '#a_tag_array' do

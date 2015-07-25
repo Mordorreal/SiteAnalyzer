@@ -5,10 +5,10 @@ RSpec.describe SiteAnalyzer do
   it 'has a version number' do
     expect(SiteAnalyzer::VERSION).to be
   end
-  before (:each) do
-      SiteAnalyzer.add_site 'http://savchuk.space'
+  before do
+      SiteAnalyzer.add_site 'http://savchuk.space', 5, false
       SiteAnalyzer.add_site 'https://mail.ru', 5
-      SiteAnalyzer.add_site 'http://google.ru', 15, true
+      SiteAnalyzer.add_site 'http://google.ru', 15, false
       SiteAnalyzer.start
   end
   describe '.add_site(site_url, max_pages = 100, robottxt = false)' do
