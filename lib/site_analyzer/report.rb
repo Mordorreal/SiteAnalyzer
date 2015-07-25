@@ -5,11 +5,17 @@ module SiteAnalyzer
   # Create report for site
   class Report
     attr_reader :site, :report
-    def initialize(site_url, max_pages, use_robot = false)
+    def initialize(site_url, max_pages, use_robot)
       @site_url = site_url
       @max_pages = max_pages
       @use_robot = use_robot
       @site = Site.new(@site_url, @max_pages, @use_robot)
+    end
+
+    def self.create(site_url, max_pages = 10, use_robot = false, to_console = false)
+      rep = Report.new site_url, max_pages, use_robot
+      rep.make_report
+      rep.to_s if to_console
     end
 
     def make_report

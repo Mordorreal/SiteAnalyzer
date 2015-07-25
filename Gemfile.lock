@@ -1,7 +1,11 @@
 PATH
   remote: .
   specs:
-    site_analyzer (0.2.0)
+    site_analyzer (0.2.1)
+      addressable (~> 2.3)
+      nokogiri (~> 1.6)
+      robotstxt (~> 0.5)
+      terminal-table (~> 1.5)
 
 GEM
   remote: https://rubygems.org/
@@ -32,14 +36,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  addressable (~> 2)
-  bundler (~> 1)
-  nokogiri (~> 1)
-  rake (~> 10)
-  robotstxt (~> 0)
-  rspec (~> 3)
+  bundler (~> 1.10)
+  rake (~> 10.4)
+  rspec (~> 3.3)
   site_analyzer!
-  terminal-table (~> 1)
 
 BUNDLED WITH
    1.10.5

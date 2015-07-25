@@ -23,12 +23,9 @@ You might need administrator privileges on your system to install it.
 <b>How to use</b>
 
 require 'site_analyzer'<br>
-SiteAnalyzer.add_site 'http://savchuk.space', 10, true # add site to list scan only 10 first pages with robot.txt <br>
-SiteAnalyzer.start # start creating of reports<br>
-SiteAnalyzer.show_all_reports # show all reports in console<br>
-SiteAnalyzer.show_report 5 # show report number 5 starting from 1 in console<br>
-SiteAnalyzer.report[0].report # return Hash report<br>
-
+                                   <b>Site</b><b>Number of pages</b><b>Use robot.txt</b><b>Output to console</b>
+SiteAnalyzer.Report.create 'http://savchuk.space',      10,                 true,                true 
+Return hash with report.
 <b>Author</b>
 
 Denis Savchuk <a href="mailto:denis@savchuk.space"><denis@savchuk.space></a>
