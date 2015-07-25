@@ -23,8 +23,8 @@ You might need administrator privileges on your system to install it.
 <b>How to use</b>
 
 require 'site_analyzer'<br>
-                                   <b>Site</b><b>Number of pages</b><b>Use robot.txt</b><b>Output to console</b>
-SiteAnalyzer::Report.create 'http://savchuk.space',      10,                 true,                true 
+                                          <b>Site</b><b>Number of pages</b><b>Use robot.txt</b><b>Output to console</b>
+SiteAnalyzer::Report.create site: 'http://savchuk.space',   pages: 10,        robot: false,         console: true
 Return hash with report.
 <b>Author</b>
 

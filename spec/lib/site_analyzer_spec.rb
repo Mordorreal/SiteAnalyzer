@@ -5,30 +5,13 @@ RSpec.describe SiteAnalyzer do
   it 'has a version number' do
     expect(SiteAnalyzer::VERSION).to be
   end
-  before do
-      SiteAnalyzer.add_site 'http://savchuk.space', 5, false
-      SiteAnalyzer.add_site 'https://mail.ru', 5
-      SiteAnalyzer.add_site 'http://google.ru', 15, false
-      SiteAnalyzer.start
+  it 'can create report without robot.txt' do
+    expect(SiteAnalyzer::Report.create site: 'http://savchuk.space', pages: 10, robot: false).to be
   end
-  describe '.add_site(site_url, max_pages = 100, robottxt = false)' do
-    it 'add site with deep and robot.txt if needed in list' do
-      expect(SiteAnalyzer.add_site 'https://mail.ru', 5, true).to be
-    end
+  it 'can create report with robot.txt' do
+    expect(SiteAnalyzer::Report.create site: 'http://mail.ru', pages: 10, robot: true).to be
   end
-  describe '.start' do
-    it 'make report for each site in list @report' do
-      expect(SiteAnalyzer.start).to be
-    end
-  end
-  describe '.show_all_reports' do
-    it 'show all reports in console' do
-      expect(SiteAnalyzer.show_all_reports).to be
-    end
-  end
-  describe '.show_report(number)' do
-    it 'show report with number' do
-      expect(SiteAnalyzer.show_report(1)).to be
-    end
+  it 'can make output to console' do
+    expect(SiteAnalyzer::Report.create site: 'http://google.ru', pages: 10, robot: false, console: true).to be
   end
 end
