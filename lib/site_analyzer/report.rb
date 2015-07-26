@@ -13,7 +13,7 @@ module SiteAnalyzer
     end
 
     def self.create(options)
-      rep = Report.new options[:site], options[:pages], options[:robot]
+      rep = Report.new options[:site].to_s, options[:pages].to_i, options[:robot]
       rep.make_report
       rep.to_s if options[:console]
       rep.report
