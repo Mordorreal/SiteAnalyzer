@@ -13,6 +13,7 @@ module SiteAnalyzer
     end
 
     def self.create(options)
+      options[:robot] = false if options[:robot] == 'false'
       rep = Report.new options[:site].to_s, options[:pages].to_i, options[:robot]
       rep.make_report
       rep.to_s if options[:console]
