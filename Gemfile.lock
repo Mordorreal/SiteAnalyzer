@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    site_analyzer (0.2.1)
+    site_analyzer (0.3.1)
       addressable (~> 2.3)
       nokogiri (~> 1.6)
       robotstxt (~> 0.5)

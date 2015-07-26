@@ -16,7 +16,7 @@ module SiteAnalyzer
       rep = Report.new options[:site], options[:pages], options[:robot]
       rep.make_report
       rep.to_s if options[:console]
-      rep
+      rep.report
     end
 
     def make_report
