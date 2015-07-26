@@ -116,6 +116,7 @@ module SiteAnalyzer
     def bad_url
       result = []
       a_tag_array.each do |url|
+        url[1] = '-' unless url[1]
         result << url unless URI(url[1][0]).path =~ /^[\/a-z0-9-]+$/
       end
       result
