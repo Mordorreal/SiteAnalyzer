@@ -44,9 +44,10 @@ module SiteAnalyzer
       puts header
       @report.each_pair do |key, value|
         rows = []
+        value = ['Too many for console report'] if key == :a_tags_list
         value.each do |r|
           r = [r] if r.class == String
-          rows << r unless key == :a_tags_list
+          rows << r
         end
         table = Terminal::Table.new title: key, rows: rows
         puts table
@@ -116,8 +117,12 @@ module SiteAnalyzer
     def bad_url
       result = []
       a_tag_array.each do |url|
-        url[1] = '-' unless url[1]
-        result << url unless URI(url[1][0]).path =~ /^[\/a-z0-9-]+$/
+        begin
+          uri = URI(url[1])
+          result << url if (uri.scheme == 'http' || uri.scheme == 'https' ) unless uri.path =~ /^[\/a-z0-9-.]+$/
+        rescue URI::InvalidURIError
+          result << url
+        end
       end
       result
     end
@@ -135,7 +140,7 @@ module SiteAnalyzer
     end
 
     def h2_doubles
-      find_doubles(@site.all_h2)
+      find_doubles @site.all_h2
     end
 
     def not_uniq_words_in_h2

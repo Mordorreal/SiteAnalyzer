@@ -82,8 +82,12 @@ module SiteAnalyzer
     def all_a
       result = []
       @pages.each do |page|
-        tags = page.all_a_tags.compact
-        result << [page.page_url, tags[0], tags[1], tags[2]]
+        page.all_a_tags.compact.each do |tag|
+          tag[0] = '-' unless tag[0]
+          tag[1] = '-' unless tag[1]
+          tag[2] = '-' unless tag[2]
+          result << [page.page_url, tag[0], tag[1], tag[2]]
+        end
       end
       result.compact
     end

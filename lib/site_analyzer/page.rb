@@ -18,6 +18,8 @@ module SiteAnalyzer
 
     def get_page(url)
       timeout(10) { Nokogiri::HTML(open(url)) }
+    rescue Timeout::Error
+      ['Timeout exception']
     end
 
     def get_domain(url)
