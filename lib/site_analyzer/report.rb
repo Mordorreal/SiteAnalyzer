@@ -119,7 +119,7 @@ module SiteAnalyzer
       a_tag_array.each do |url|
         begin
           uri = URI(url[1])
-          result << url if (uri.scheme == 'http' || uri.scheme == 'https' ) unless uri.path =~ /^[\/a-z0-9-.]+$/
+          result << url if (uri.scheme == 'http' || uri.scheme == 'https' ) unless uri.path && uri.path =~ /^[\w\-\/\+\.]+$/
         rescue URI::InvalidURIError
           result << url
         end
