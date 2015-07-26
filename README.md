@@ -23,9 +23,12 @@ You might need administrator privileges on your system to install it.
 <b>How to use</b>
 
 require 'site_analyzer'<br>
-                                          <b>Site</b><b>Number of pages</b><b>Use robot.txt</b><b>Output to console</b>
-SiteAnalyzer::Report.create site: 'http://savchuk.space',   pages: 10,        robot: false,         console: true
+                                          
+SiteAnalyzer::Report.create site: 'http://savchuk.space', pages: 10, robot: false, console: true
 Return hash with report.
+# arguments: site - url mast start from http or https, pages - number of pages to scan, robot - use or not robot.txt file, console - output to console
+<br>
+
 <b>Author</b>
 
 Denis Savchuk <a href="mailto:denis@savchuk.space"><denis@savchuk.space></a>
