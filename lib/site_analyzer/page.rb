@@ -17,13 +17,13 @@ module SiteAnalyzer
     end
 
     def get_page(url)
-      timeout(10) { Nokogiri::HTML(open(url)) }
+      timeout(30) { Nokogiri::HTML(open(url)) }
     rescue Timeout::Error
       ['Timeout exception']
     end
 
     def get_domain(url)
-      timeout(10) { Addressable::URI.parse(url).host }
+      timeout(30) { Addressable::URI.parse(url).host }
     rescue
       'Error with parsing by Addressable'
     end
