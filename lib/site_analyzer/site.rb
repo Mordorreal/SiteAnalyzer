@@ -36,9 +36,13 @@ module SiteAnalyzer
 
     def add_pages_for_scan!
       @pages_for_scan = []
+      @bad_pages = []
       @pages.each do |page|
-        page.home_a.each do |link|
-          @pages_for_scan << link unless link.nil? || @scanned_pages.include?(link) || link.include?('mailto:') || link.end_with?('.jpg')
+        @bad_pages << page.page_url unless page.page
+        if page.page
+          page.home_a.each do |link|
+            @pages_for_scan << link unless link.nil? || @scanned_pages.include?(link) || link.start_with?('mailto:') || link.start_with?('skype:') || link.end_with?('.jpg')
+          end
         end
       end
       @pages_for_scan.clear if @pages_for_scan.size == 0
@@ -58,7 +62,9 @@ module SiteAnalyzer
     def all_titles
       result = []
       @pages.each do |page|
-        result << [page.page_url, page.titles]
+        if page.page
+          result << [page.page_url, page.titles]
+        end
       end
       result
     end
@@ -66,7 +72,9 @@ module SiteAnalyzer
     def all_descriptions
       result = []
       @pages.each do |page|
-        result << [page.page_url, page.all_meta_description_content]
+        if page.page
+          result << [page.page_url, page.all_meta_description_content]
+        end
       end
       result
     end
@@ -74,7 +82,9 @@ module SiteAnalyzer
     def all_h2
       result = []
       @pages.each do |page|
-        result << [page.page_url, page.h2]
+        if page.page
+          result << [page.page_url, page.h2]
+        end
       end
       result
     end
@@ -82,11 +92,13 @@ module SiteAnalyzer
     def all_a
       result = []
       @pages.each do |page|
-        page.all_a_tags.compact.each do |tag|
-          tag[0] = '-' unless tag[0]
-          tag[1] = '-' unless tag[1]
-          tag[2] = '-' unless tag[2]
-          result << [page.page_url, tag[0], tag[1], tag[2]]
+        if page.page
+          page.all_a_tags.compact.each do |tag|
+            tag[0] = '-' unless tag[0]
+            tag[1] = '-' unless tag[1]
+            tag[2] = '-' unless tag[2]
+            result << [page.page_url, tag[0], tag[1], tag[2]]
+          end
         end
       end
       result.compact
