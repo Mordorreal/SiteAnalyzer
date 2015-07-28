@@ -103,8 +103,11 @@ module SiteAnalyzer
     def home_a
       if @page
         home_a = []
-        all_a_tags_href.each do |link|
-          home_a << link if get_domain(link) && get_domain(link).include?(@site_url)
+        all_a_tags_href.uniq.each do |link|
+          if get_domain(link) && @site_url
+            domain = get_domain(link)
+            home_a << link if domain == @site_url
+          end
         end
         home_a
       end
@@ -114,7 +117,10 @@ module SiteAnalyzer
       if @page
         remote_a = []
         all_a_tags_href.uniq.each do |link|
-          remote_a << link unless get_domain(link) && get_domain(link).include?(@site_url)
+          if get_domain(link) && @site_url
+            domain = get_domain(link)
+            remote_a << link unless domain == @site_url
+          end
         end
         remote_a
       end

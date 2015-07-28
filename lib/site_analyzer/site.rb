@@ -31,6 +31,8 @@ module SiteAnalyzer
         add_page @pages_for_scan.pop
         return if @max_pages <= 0
         add_pages_for_scan!
+        optimize_scan!
+        return if @pages_for_scan.size == 0
       end
     end
 
@@ -41,11 +43,10 @@ module SiteAnalyzer
         @bad_pages << page.page_url unless page.page
         if page.page
           page.home_a.each do |link|
-            @pages_for_scan << link unless link.nil? || @scanned_pages.include?(link) || link.start_with?('mailto:') || link.start_with?('skype:') || link.end_with?('.jpg')
+            @pages_for_scan << link unless link.nil? || link.start_with?('mailto:') || link.start_with?('skype:') || link.end_with?('.jpg')
           end
         end
       end
-      @pages_for_scan.clear if @pages_for_scan.size == 0
     end
 
     def add_page(url)
@@ -102,6 +103,12 @@ module SiteAnalyzer
         end
       end
       result.compact
+    end
+
+    def optimize_scan!
+      @pages_for_scan.uniq.compact!
+      @scanned_pages.uniq.compact!
+      @pages_for_scan = @pages_for_scan - @scanned_pages
     end
   end
 end
