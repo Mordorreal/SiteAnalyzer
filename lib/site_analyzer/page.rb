@@ -19,7 +19,7 @@ module SiteAnalyzer
     def get_page(url)
       begin
         timeout(30) { Nokogiri::HTML(open(url)) }
-      rescue Timeout::Error, EOFError, OpenURI::HTTPError
+      rescue Timeout::Error, EOFError, OpenURI::HTTPError, Errno::ENOENT
         return nil
       end
     end
@@ -104,7 +104,7 @@ module SiteAnalyzer
       if @page
         home_a = []
         all_a_tags_href.each do |link|
-          home_a << link if link.include? @site_url
+          home_a << link if get_domain(link) && get_domain(link).include?(@site_url)
         end
         home_a
       end
@@ -114,7 +114,7 @@ module SiteAnalyzer
       if @page
         remote_a = []
         all_a_tags_href.uniq.each do |link|
-          remote_a << link unless link.include? @site_url
+          remote_a << link unless get_domain(link) && get_domain(link).include?(@site_url)
         end
         remote_a
       end
@@ -127,16 +127,6 @@ module SiteAnalyzer
             tags << node['href']
           end
         tags.compact
-      end
-    end
-
-    def wrong_a
-      if @page
-        wrong_a = []
-        all_a_tags_href.each do |link|
-          wrong_a << link if link.include? '?meta='
-        end
-        wrong_a
       end
     end
 

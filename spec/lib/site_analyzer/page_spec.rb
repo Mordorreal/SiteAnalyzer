@@ -94,20 +94,15 @@ RSpec.describe SiteAnalyzer::Page do
   end
   describe '#home_a' do
     context 'when have links on site' do
-      let(:initial_values) { 'http://savchuk.space' }
+      let(:initial_values) { 'https://mail.ru' }
       it 'return array of all a tags that went only on this site' do
-        expect(page.home_a.uniq).to eq ['mailto:denis@savchuk.space']
+        expect(subject.home_a.size).to be > 0
       end
     end
   end
   describe '#all_a_tags_href' do
     it 'return href from all a tag on page' do
       expect(page.all_a_tags_href.uniq).to eq array1
-    end
-  end
-  describe '#wrong_a' do
-    it 'find wrong a with /?meta= and return array' do
-      expect(page.wrong_a).to eq []
     end
   end
   describe '#h2?' do
