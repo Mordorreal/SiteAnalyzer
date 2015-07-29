@@ -146,4 +146,14 @@ RSpec.describe SiteAnalyzer::Page do
       expect(subject.page_path).to be
     end
   end
+  describe '#bad_url' do
+    it 'return page url if url not HLU (Human-Like-URL)' do
+      page1 = SiteAnalyzer::Page.new 'https://mail.ru'
+      page2 = SiteAnalyzer::Page.new 'http://nash-farfor.ru/index.php?route=information/information&information_id=10'
+      page3 = SiteAnalyzer::Page.new 'http://www.google.ru/'
+      expect(page1.bad_url).to eq nil
+      expect(page2.bad_url).to be
+      expect(page3.bad_url).to eq nil
+    end
+  end
 end

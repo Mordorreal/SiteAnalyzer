@@ -46,7 +46,7 @@ module SiteAnalyzer
         @bad_pages << page.page_url unless page.page
         if page.page
           page.home_a.each do |link|
-            @pages_for_scan << link unless link.nil? || link.start_with?('mailto:') || link.start_with?('skype:') || link.end_with?('.jpg')
+            @pages_for_scan << link
           end
         end
       end
@@ -115,21 +115,31 @@ module SiteAnalyzer
       result
     end
 
+    def bad_urls
+      result = []
+      @pages.each do |page|
+        result << page.bad_url
+      end
+      result.compact!
+    end
+
     def optimize_scan!
-      @pages_for_scan.uniq.compact!
-      @scanned_pages.uniq.compact!
+      @pages_for_scan = @pages_for_scan.compact.uniq
+      @scanned_pages = @scanned_pages.compact.uniq
       @pages_for_scan = @pages_for_scan - @scanned_pages
     end
 
     def convert_to_valid(url)
-      link = URI(url.to_ascii)
-      main_page = URI(@main_url.to_ascii)
+      return nil if url =~ /.jpg$/
+      url.insert(0, @main_url.first(5)) if url.start_with? '//'
+      link = URI(url)
+      main_page = URI(@main_url)
       if link && link.scheme && link.scheme.empty?
         link.scheme = main_page.scheme
       elsif link.nil?
         return nil
       end
-      if link.scheme == 'http' || link.scheme == 'https'
+      if link.scheme =~ /^http/
         request = link.scheme + '://' + link.host
         if link.request_uri
           request += link.request_uri
@@ -138,6 +148,8 @@ module SiteAnalyzer
         request = nil
       end
       request
+    rescue
+      link
     end
   end
 end

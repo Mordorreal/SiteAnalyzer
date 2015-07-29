@@ -115,17 +115,7 @@ module SiteAnalyzer
     end
 
     def bad_url
-      result = []
-      @site.pages_url.each do |url|
-        begin
-          uri = URI.parse(url)
-        rescue URI::InvalidURIError
-          result << url
-        end
-          result << url unless uri.path.empty? || uri.path =~ /^[\w.\-\/]+$/
-          # result << url unless uri.path.empty? || uri.path =~ /^[\/a-zA-Z0-9\-\.]+$/
-      end
-      result
+      @site.bad_urls
     end
 
     def title_doubles

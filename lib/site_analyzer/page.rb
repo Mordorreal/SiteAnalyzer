@@ -4,6 +4,7 @@ module SiteAnalyzer
   require 'addressable/uri'
   require 'timeout'
   require 'stringex_lite'
+  require 'open-uri'
   class Page
     attr_reader :page_url, :titles, :page, :page_path, :site_domain
     def initialize(url)
@@ -28,9 +29,9 @@ module SiteAnalyzer
       begin
         timeout(30) do
           page = open(url)
-          @page = Nokogiri::HTML(page)
           @site_domain = page.base_uri.host
-          @page_path = page.base_uri.path
+          @page_path = page.base_uri.request_uri
+          @page = Nokogiri::HTML(page)
         end
       rescue Timeout::Error, EOFError, OpenURI::HTTPError, Errno::ENOENT
         return nil
@@ -113,7 +114,7 @@ module SiteAnalyzer
       if @page
         home_a = []
         all_a_tags_href.uniq.each do |link|
-          uri = URI(link.to_ascii)
+          uri = URI(link.to_ascii) rescue nil #TODO: write additional logic for link to image
           if uri && @site_domain
             home_a << link if uri.host == @site_domain
           end
@@ -187,6 +188,10 @@ module SiteAnalyzer
         @page.css('h2').each { |tag| h2s << tag.text }
         h2s
       end
+    end
+
+    def bad_url
+      @page_url unless @page_path.size <= 1 && @page_path =~ /^[\w.\-\/]+$/
     end
   end
 end
