@@ -9,7 +9,7 @@ RSpec.describe SiteAnalyzer::Page do
             "#logoModal", "https://www.facebook.com/denis.savchuk.3",
             "https://ru.linkedin.com/pub/denis-savchuk/31/944/443", "skype:realmordor?add",
             "https://vk.com/darkmordor", "https://github.com/Mordorreal", "mailto:denis@savchuk.space", "#myCarousel"]
-  array2 = ["Denis Savchuk Professional Web Developer", {"http://savchuk.space"=>""}, {"http://savchuk.space"=>""}]
+  array2 = ['Denis Savchuk Professional Web Developer', {'http://savchuk.space' => ''}, {'http://savchuk.space' => ''}]
   describe '#title_good?' do
     it 'check that title txt less then 70 symbols' do
       expect(page.title_good?).to eq true
@@ -136,6 +136,14 @@ RSpec.describe SiteAnalyzer::Page do
     it 'return array of h2 tag text on page' do
       expect(page.h2.size).to be >= 0
       expect(page.h2).to be_an_instance_of Array
+    end
+  end
+  describe '#get_page(url)' do
+    it 'get page and parse it, save domain and path name' do
+      subject.get_page 'http://savchuk.space'
+      expect(subject.page).to be
+      expect(subject.site_domain).to be
+      expect(subject.page_path).to be
     end
   end
 end

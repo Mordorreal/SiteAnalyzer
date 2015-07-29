@@ -4,16 +4,16 @@ module SiteAnalyzer
   require 'timeout'
   # Create site object with all scans
   class Site
-    attr_reader :main_url, :pages, :domain, :pages_for_scan, :max_pages
+    attr_reader :main_url, :pages, :domain, :pages_for_scan, :max_pages, :scanned_pages
     def initialize(url, max_pages = 10, use_robot_txt = false)
+      Stringex::Localization.default_locale = :en
       @main_url = url
       @pages = []
-      @max_pages = max_pages
-      @domain = Addressable::URI.parse(url).host
       @use_robot_txt = use_robot_txt
       @scanned_pages = []
       @pages_for_scan = []
-      add_page url
+      @max_pages = max_pages - 1
+      @pages << Page.new(convert_to_valid(@main_url))
       scan_site!
     end
 
@@ -28,11 +28,14 @@ module SiteAnalyzer
     def scan_site!
       add_pages_for_scan!
       while @pages_for_scan.size > 0
-        add_page @pages_for_scan.pop
-        return if @max_pages <= 0
-        add_pages_for_scan!
-        optimize_scan!
-        return if @pages_for_scan.size == 0
+        page = convert_to_valid @pages_for_scan.pop
+        if page
+          @max_pages -= 1
+          add_page convert_to_valid(page)
+          return if @max_pages <= 0
+          add_pages_for_scan!
+          optimize_scan!
+        end
       end
     end
 
@@ -56,7 +59,6 @@ module SiteAnalyzer
       end
       page = Page.new(url)
       @pages << page
-      @max_pages -= 1
       @scanned_pages << url
     end
 
@@ -83,7 +85,7 @@ module SiteAnalyzer
     def all_h2
       result = []
       @pages.each do |page|
-        if page.page
+        unless page.page
           result << [page.page_url, page.h2]
         end
       end
@@ -105,10 +107,37 @@ module SiteAnalyzer
       result.compact
     end
 
+    def pages_url
+      result = []
+      @pages.each do |page|
+         result << page.page_url if page.page
+      end
+      result
+    end
+
     def optimize_scan!
       @pages_for_scan.uniq.compact!
       @scanned_pages.uniq.compact!
       @pages_for_scan = @pages_for_scan - @scanned_pages
+    end
+
+    def convert_to_valid(url)
+      link = URI(url.to_ascii)
+      main_page = URI(@main_url.to_ascii)
+      if link && link.scheme && link.scheme.empty?
+        link.scheme = main_page.scheme
+      elsif link.nil?
+        return nil
+      end
+      if link.scheme == 'http' || link.scheme == 'https'
+        request = link.scheme + '://' + link.host
+        if link.request_uri
+          request += link.request_uri
+        end
+      else
+        request = nil
+      end
+      request
     end
   end
 end

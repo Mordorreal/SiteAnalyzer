@@ -3,29 +3,38 @@ module SiteAnalyzer
   require 'nokogiri'
   require 'addressable/uri'
   require 'timeout'
+  require 'stringex_lite'
   class Page
-    attr_reader :page_url, :titles, :page
+    attr_reader :page_url, :titles, :page, :page_path, :site_domain
     def initialize(url)
       @page_url = url
-      @page = get_page(url)
-      @site_url = get_domain url
+      @page = []
+      @site_domain = ''
+      @page_path = ''
+      @titles = []
+      get_page(url)
+      fill_data_field!
+    end
+
+    def fill_data_field!
       @titles = all_titles
     end
 
     def to_s
-      "Page url: #{@page_url} Site url: #{@site_url}"
+      "Page url: #{@page_url} Site url: #{@site_domain}"
     end
 
     def get_page(url)
       begin
-        timeout(30) { Nokogiri::HTML(open(url)) }
+        timeout(30) do
+          page = open(url)
+          @page = Nokogiri::HTML(page)
+          @site_domain = page.base_uri.host
+          @page_path = page.base_uri.path
+        end
       rescue Timeout::Error, EOFError, OpenURI::HTTPError, Errno::ENOENT
         return nil
       end
-    end
-
-    def get_domain(url)
-      timeout(30) { Addressable::URI.parse(url).host } rescue nil
     end
 
     def title_good?
@@ -104,9 +113,9 @@ module SiteAnalyzer
       if @page
         home_a = []
         all_a_tags_href.uniq.each do |link|
-          if get_domain(link) && @site_url
-            domain = get_domain(link)
-            home_a << link if domain == @site_url
+          uri = URI(link.to_ascii)
+          if uri && @site_domain
+            home_a << link if uri.host == @site_domain
           end
         end
         home_a
@@ -117,9 +126,9 @@ module SiteAnalyzer
       if @page
         remote_a = []
         all_a_tags_href.uniq.each do |link|
-          if get_domain(link) && @site_url
-            domain = get_domain(link)
-            remote_a << link unless domain == @site_url
+          uri = URI(link.to_ascii)
+          if uri && @site_domain
+            remote_a << link unless uri.host == @site_domain
           end
         end
         remote_a

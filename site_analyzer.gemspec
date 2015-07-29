@@ -21,9 +21,11 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'bundler', '~> 1.10'
   spec.add_development_dependency 'rake', '~> 10.4'
   spec.add_development_dependency 'rspec', '~> 3.3'
+  spec.add_development_dependency 'guard-rspec', '~> 4.6'
   spec.add_runtime_dependency 'nokogiri', '~> 1.6'
   spec.add_runtime_dependency 'addressable', '~> 2.3'
   spec.add_runtime_dependency 'robotstxt', '~> 0.5'
   spec.add_runtime_dependency 'terminal-table', '~> 1.5'
+  spec.add_runtime_dependency 'stringex', '~> 2.5'
   spec.required_ruby_version = '~> 2.2'
 end

@@ -6,10 +6,10 @@ module SiteAnalyzer
   class Report
     attr_reader :site, :report
     def initialize(site_url, max_pages = 10, use_robot = false)
-      @site_url = site_url
+      @site_domain = site_url
       @max_pages = max_pages
       @use_robot = use_robot
-      @site = Site.new(@site_url, @max_pages, @use_robot)
+      @site = Site.new(@site_domain, @max_pages, @use_robot)
     end
 
     def self.create(options)
@@ -40,7 +40,7 @@ module SiteAnalyzer
 
     def to_s
       return 'Report is empty' if @report.nil? || @report.empty?
-      header = Terminal::Table.new title: "Report for #{@site_url} with #{@max_pages} pages max_pages and robot check is #{@use_robot}"
+      header = Terminal::Table.new title: "Report for #{@site_domain} with #{@max_pages} pages max_pages and robot check is #{@use_robot}"
       puts header
       @report.each_pair do |key, value|
         rows = []
@@ -116,13 +116,14 @@ module SiteAnalyzer
 
     def bad_url
       result = []
-      a_tag_array.each do |url|
+      @site.pages_url.each do |url|
         begin
-          uri = URI(url[1])
-          result << url if (uri.scheme == 'http' || uri.scheme == 'https' ) unless uri.path && uri.path =~ /^[\w\-\/\+\.]+$/
+          uri = URI.parse(url)
         rescue URI::InvalidURIError
           result << url
         end
+          result << url unless uri.path.empty? || uri.path =~ /^[\w.\-\/]+$/
+          # result << url unless uri.path.empty? || uri.path =~ /^[\/a-zA-Z0-9\-\.]+$/
       end
       result
     end

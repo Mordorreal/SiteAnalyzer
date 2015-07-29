@@ -86,8 +86,9 @@ RSpec.describe SiteAnalyzer::Report do
   end
   describe '#bad_url' do
     it 'find bad url and return array of it with page url' do
-      expect(@report_savchuk.bad_url.size).to be >= 0
-      expect(@report_savchuk.bad_url).to be_an_instance_of Array
+      mail = SiteAnalyzer::Report.new('http://www.placewoman.ru/', 50, false)
+      expect(mail.bad_url.size).to be >= 0
+      expect(mail.bad_url).to be_an_instance_of Array
     end
   end
   describe '#h2_doubles' do
