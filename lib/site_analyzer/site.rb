@@ -4,7 +4,7 @@ module SiteAnalyzer
   require 'timeout'
   # Create site object with all scans
   class Site
-    attr_reader :main_url, :pages, :domain, :pages_for_scan, :max_pages, :scanned_pages
+    attr_reader :main_url, :pages, :pages_for_scan, :max_pages, :scanned_pages
     def initialize(url, max_pages = 10, use_robot_txt = false)
       Stringex::Localization.default_locale = :en
       @main_url = url
@@ -130,7 +130,7 @@ module SiteAnalyzer
     end
 
     def convert_to_valid(url)
-      return nil if url =~ /.jpg$/
+      return nil if url =~ /.jpg$/i
       url.insert(0, @main_url.first(5)) if url.start_with? '//'
       link = URI(url)
       main_page = URI(@main_url)

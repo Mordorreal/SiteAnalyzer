@@ -1,6 +1,7 @@
 # Tests of Site class
 require 'spec_helper'
-require 'site_analyzer'
+require_relative '../../../lib/site_analyzer/site'
+
 RSpec.describe SiteAnalyzer::Site do
   subject(:site) { SiteAnalyzer::Site.new initial_values, 10, false }
   let(:initial_values) { 'http://www.placewoman.ru' }

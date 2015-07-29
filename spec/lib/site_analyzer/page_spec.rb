@@ -1,6 +1,5 @@
 require 'spec_helper'
-require 'site_analyzer'
-require 'rspec'
+require_relative '../../../lib/site_analyzer/page'
 # analizer/page.rb
 RSpec.describe SiteAnalyzer::Page do
   subject(:page) { SiteAnalyzer::Page.new initial_values }

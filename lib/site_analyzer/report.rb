@@ -25,7 +25,7 @@ module SiteAnalyzer
       @report = {}
       @report[:title_more_then_70_symbols] = check_titles_text_less_than_70
       @report[:title_and_h1_have_doubles] = check_title_and_h1_for_doubles
-      @report[:meta_description_more_than_200] = check_meta_description_less_then_200
+      @report[:meta_description_more_than_200] = check_meta_description
       @report[:meta_keywords_tags_more_than_600] = check_meta_keywords_tags
       @report[:dont_have_h2_tags] = check_h2
       @report[:pages_size_with_url] = pages_size
@@ -70,7 +70,7 @@ module SiteAnalyzer
       result
     end
 
-    def check_meta_description_less_then_200
+    def check_meta_description
       result = []
       @site.pages.each do |page|
         result << page.page_url unless page.metadescription_good?

@@ -1,6 +1,6 @@
 # Tests of Report class
 require 'spec_helper'
-require 'site_analyzer'
+require_relative '../../../lib/site_analyzer/report'
 
 RSpec.describe SiteAnalyzer::Report do
   subject(:subject) { SiteAnalyzer::Report.new('http://savchuk.space', 10, false) }
@@ -36,7 +36,7 @@ RSpec.describe SiteAnalyzer::Report do
   end
   describe '#check_meta_description_less_then_200' do
     it 'and return array with bad pages url' do
-      expect(subject.check_meta_description_less_then_200).to be
+      expect(subject.check_meta_description).to be
     end
   end
   describe '#check_meta_keywords_tags' do
