@@ -140,10 +140,7 @@ module SiteAnalyzer
         return nil
       end
       if link.scheme =~ /^http/
-        request = link.scheme + '://' + link.host
-        if link.request_uri
-          request += link.request_uri
-        end
+        request = link.to_s
       else
         request = nil
       end

@@ -191,7 +191,7 @@ module SiteAnalyzer
     end
 
     def bad_url
-      @page_url unless @page_path.size <= 1 && @page_path =~ /^[\w.\-\/]+$/
+      @page_url if @page_path.size > 1 unless @page_path =~ /^[\w.\-\/]+$/i
     end
   end
 end
