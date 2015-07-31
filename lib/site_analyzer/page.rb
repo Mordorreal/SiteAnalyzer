@@ -1,30 +1,76 @@
 module SiteAnalyzer
-  # Get site page and provide metods for analyse
+  # Get site page and provide data for future analyse
   require 'nokogiri'
   require 'addressable/uri'
   require 'timeout'
   require 'stringex_lite'
   require 'open-uri'
   class Page
-    attr_reader :page_url, :titles, :page, :page_path, :site_domain
+    attr_reader :page_url, :page_path, :site_domain,
+                :all_titles, :title_good, :title_and_h1_good,
+                :meta_description_good, :meta_keywords, :code_less,
+                :meta_data, :meta_title_duplicates, :title_h1_h2,
+                :have_h2, :page_text_size, :page_a_tags,
+                :meta_desc_content, :h2_text, :hlu
+    # create page object, fill date and clear don't needed elements
     def initialize(url)
       @page_url = url
-      @page = []
-      @site_domain = ''
-      @page_path = ''
-      @titles = []
       get_page(url)
-      fill_data_field!
+      fill_data_field! if @page
+      clear!
     end
-
-    def fill_data_field!
-      @titles = all_titles
-    end
-
+    # to_s for report
     def to_s
       "Page url: #{@page_url} Site url: #{@site_domain}"
     end
+    # get all home (that on this site) url on page
+    def home_a
+      if @page_a_tags
+        home_a = []
+        @page_a_tags.uniq.each do |link|
+          uri = URI(link[0].to_ascii) rescue nil #TODO: write additional logic for link to image
+          if uri && @site_domain
+            home_a << link[0] if uri.host == @site_domain
+          end
+        end
+        home_a
+      end
+    end
+    # get all remote link on page
+    def remote_a
+      if @page_a_tags
+        remote_a = []
+        @page_a_tags.uniq.each do |link|
+          uri = URI(link[0].to_ascii)
+          if uri && @site_domain
+            remote_a << link[0] unless uri.host == @site_domain
+          end
+        end
+        remote_a
+      end
+    end
 
+    private
+
+    # fill Page instant with data for report
+    def fill_data_field!
+      @all_titles = titles
+      @meta_data = collect_metadates
+      @title_h1_h2 = all_titles_h1_h2
+      @page_text_size = text_size
+      @page_a_tags = all_a_tags
+      @meta_desc_content = all_meta_description_content
+      @h2_text = h2
+      @hlu = bad_url
+      @title_good = title_good?
+      @title_and_h1_good = title_and_h1_good?
+      @meta_description_good = metadescription_good?
+      @meta_keywords = keywords_good?
+      @code_less = code_less?
+      @meta_title_duplicates = metadates_good?
+      @have_h2 = h2?
+    end
+    # get page with open-uri, then parse it with Nokogiri. Get site domain and path from URI
     def get_page(url)
       begin
         timeout(30) do
@@ -37,11 +83,11 @@ module SiteAnalyzer
         return nil
       end
     end
-
+    # check that title is one and less then 70 symbols
     def title_good?
       @page.css('title').size == 1 && @page.css('title').text.size < 70 if @page
     end
-    # true if title and h1 have no dublicates
+    # true if title and h1 have no duplicates
     def title_and_h1_good?
       if @page
         arr = []
@@ -75,7 +121,7 @@ module SiteAnalyzer
         true
       end
     end
-    # true if code less then text
+    # true if code of page less then text on it
     def code_less?
       if @page
         sum = 0
@@ -86,19 +132,20 @@ module SiteAnalyzer
         sum < page_text / 2
       end
     end
-
+    # collect meta tags for future report
     def collect_metadates
-      @page.css('meta') if @page
+      meta = []
+      meta = @page.css('meta') if @page
+      meta
     end
-
+    # check meta and title tags duplicates
     def metadates_good?
       if @page
-        meta_tags = collect_metadates
-        return false if @page.css('title').size > 1 || meta_tags.nil?
+        return false if @all_titles.size > 1 || @meta_data.empty?
         node_names = []
-        meta_tags.each { |node| node_names << node['name'] }
-        return false if node_names.compact!.size < 1
-        node_names.uniq.size == node_names.size
+        @meta_data.each { |node| node_names << node['name'] }
+        node_names.compact!
+        node_names.uniq.size == node_names.size unless node_names.nil? || node_names.size < 1
       end
     end
     # return hash with all titles, h1 and h2
@@ -107,53 +154,18 @@ module SiteAnalyzer
         out = []
         out << @page.css('title').text << { @page_url => @page.css('h1').text }
         out << { @page_url => @page.css('h2').text }
+        out
       end
     end
-
-    def home_a
-      if @page
-        home_a = []
-        all_a_tags_href.uniq.each do |link|
-          uri = URI(link.to_ascii) rescue nil #TODO: write additional logic for link to image
-          if uri && @site_domain
-            home_a << link if uri.host == @site_domain
-          end
-        end
-        home_a
-      end
-    end
-
-    def remote_a
-      if @page
-        remote_a = []
-        all_a_tags_href.uniq.each do |link|
-          uri = URI(link.to_ascii)
-          if uri && @site_domain
-            remote_a << link unless uri.host == @site_domain
-          end
-        end
-        remote_a
-      end
-    end
-
-    def all_a_tags_href
-      if @page
-        tags = []
-          @page.css('a').each do |node|
-            tags << node['href']
-          end
-        tags.compact
-      end
-    end
-
+    # check if page have h2 tags
     def h2?
       @page.css('h2').size > 0 if @page
     end
-
-    def page_text_size
+    # return page size in symbols
+    def text_size
       @page.text.size if @page
     end
-
+    # get all a tags
     def all_a_tags
       if @page
         tags = []
@@ -163,15 +175,15 @@ module SiteAnalyzer
         tags.compact
       end
     end
-
-    def all_titles
+    # return all page titles
+    def titles
       if @page
         titles = []
         @page.css('title').each { |tag| titles << tag.text }
         titles
       end
     end
-
+    # return all meta description content
     def all_meta_description_content
       if @page
         tags = []
@@ -181,7 +193,7 @@ module SiteAnalyzer
         tags
       end
     end
-
+    # return all h2 tags text
     def h2
       if @page
         h2s = []
@@ -189,9 +201,13 @@ module SiteAnalyzer
         h2s
       end
     end
-
+    # check url of page that is must be HLU
     def bad_url
       @page_url if @page_path.size > 1 unless @page_path =~ /^[\w.\-\/]+$/i
+    end
+    # clear page from don't needed information
+    def clear!
+      @page = nil
     end
   end
 end

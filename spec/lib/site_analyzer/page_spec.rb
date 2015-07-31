@@ -1,5 +1,5 @@
 require 'spec_helper'
-require_relative '../../../lib/site_analyzer/page'
+require 'site_analyzer/page'
 # analizer/page.rb
 RSpec.describe SiteAnalyzer::Page do
   subject(:page) { SiteAnalyzer::Page.new initial_values }
@@ -11,20 +11,14 @@ RSpec.describe SiteAnalyzer::Page do
   array2 = ['Denis Savchuk Professional Web Developer', {'http://savchuk.space' => ''}, {'http://savchuk.space' => ''}]
   describe '#title_good?' do
     it 'check that title txt less then 70 symbols' do
-      expect(page.title_good?).to eq true
+      expect(page.title_good).to eq true
     end
   end
   describe '#title_and_h1_good?' do
-    context 'is false' do
-      let(:initial_values) { 'http://savchuk.space' }
-      it 'when have only title' do
-        expect(page.title_and_h1_good?).to eq true
-      end
-    end
     context 'is true' do
       let(:initial_values) { 'http://google.com' }
       it 'when have one title without same text in it' do
-        expect(page.title_and_h1_good?).to eq true
+        expect(page.title_and_h1_good).to eq true
       end
     end
   end
@@ -32,13 +26,13 @@ RSpec.describe SiteAnalyzer::Page do
     context 'is false' do
       let(:initial_values) { 'http://savchuk.space' }
       it 'when dont have meta tag' do
-        expect(page.metadescription_good?).to eq false
+        expect(page.meta_description_good).to eq false
       end
     end
     context 'is true' do
       let(:initial_values) { 'https://mail.ru' }
       it 'when have meta tag and tag less then 200 sym' do
-        expect(page.metadescription_good?).to eq true
+        expect(page.meta_description_good).to eq true
       end
     end
   end
@@ -46,13 +40,13 @@ RSpec.describe SiteAnalyzer::Page do
     context 'is false' do
       let(:initial_values) { 'http://savchuk.space' }
       it 'when dont have keywords tag' do
-        expect(page.keywords_good?).to eq false
+        expect(page.meta_keywords).to eq false
       end
     end
     context 'is true' do
       let(:initial_values) { 'https://mail.ru' }
       it 'when value in tag less then 600' do
-        expect(page.keywords_good?).to eq true
+        expect(page.meta_keywords).to eq true
       end
     end
   end
@@ -60,26 +54,21 @@ RSpec.describe SiteAnalyzer::Page do
     context 'is false and bad' do
       let(:initial_values) { 'http://yandex.ru' }
       it 'when script tag code more then half of symbols on page' do
-        expect(page.code_less?).to eq false
+        expect(page.code_less).to eq false
       end
     end
     context 'is good and true' do
       let(:initial_values) { 'http://savchuk.space' }
       it 'when code less than half' do
-        expect(page.code_less?).to eq true
+        expect(page.code_less).to eq true
       end
     end
   end
   describe '#metadates_good?' do
     context 'is true' do
       let(:initial_values) { 'https://mail.ru' }
-      it 'when title only one' do
-        expect(page.metadates_good?).to eq true
-      end
-    end
-    context 'is bad and false' do
-      it 'when dont have meta tags test check true' do
-        expect(page.metadates_good?).to eq true
+      it 'when title only one or meta data empty' do
+        expect(page.meta_title_duplicates).to eq true
       end
     end
   end
@@ -87,7 +76,7 @@ RSpec.describe SiteAnalyzer::Page do
     context 'when all fine' do
       let(:initial_values) { 'http://savchuk.space' }
       it 'return array of all titles, h1 and h2 on page' do
-        expect(page.all_titles_h1_h2).to eq array2
+        expect(page.title_h1_h2).to eq array2
       end
     end
   end
@@ -99,15 +88,10 @@ RSpec.describe SiteAnalyzer::Page do
       end
     end
   end
-  describe '#all_a_tags_href' do
-    it 'return href from all a tag on page' do
-      expect(page.all_a_tags_href.uniq).to eq array1
-    end
-  end
   describe '#h2?' do
     let(:initial_values) { 'http://yandex.ru' }
     it 'check that page have h2 tag and return true if have' do
-      expect(page.h2?).to eq true
+      expect(page.have_h2).to eq true
     end
   end
   describe '#page_text_size' do
@@ -117,7 +101,7 @@ RSpec.describe SiteAnalyzer::Page do
   end
   describe '#all_a_tags' do
     it 'return all a tags on page' do
-      expect(page.all_a_tags.size).to be > 0
+      expect(page.page_a_tags.size).to be > 0
     end
   end
   describe '#all_titles' do
@@ -128,19 +112,18 @@ RSpec.describe SiteAnalyzer::Page do
   describe '#all_meta_description_content' do
     let(:initial_values) { 'https://mail.ru' }
     it 'return all description content as array' do
-      expect(page.all_meta_description_content.size).to be > 0
+      expect(page.meta_desc_content.size).to be > 0
     end
   end
   describe '#h2' do
     it 'return array of h2 tag text on page' do
-      expect(page.h2.size).to be >= 0
-      expect(page.h2).to be_an_instance_of Array
+      expect(page.h2_text.size).to be >= 0
+      expect(page.h2_text).to be_an_instance_of Array
     end
   end
   describe '#get_page(url)' do
     it 'get page and parse it, save domain and path name' do
-      subject.get_page 'http://savchuk.space'
-      expect(subject.page).to be
+      subject = SiteAnalyzer::Page.new 'https://mail.ru'
       expect(subject.site_domain).to be
       expect(subject.page_path).to be
     end
@@ -148,11 +131,9 @@ RSpec.describe SiteAnalyzer::Page do
   describe '#bad_url' do
     it 'return page url if url not HLU (Human-Like-URL)' do
       page1 = SiteAnalyzer::Page.new 'https://mail.ru'
-      page2 = SiteAnalyzer::Page.new 'http://nash-farfor.ru/index.php?route=information/information&information_id=10'
-      page3 = SiteAnalyzer::Page.new 'http://www.google.ru/'
-      expect(page1.bad_url).to eq nil
-      expect(page2.bad_url).to be
-      expect(page3.bad_url).to eq nil
+      page2 = SiteAnalyzer::Page.new 'http://www.google.ru/'
+      expect(page1.hlu).to eq nil
+      expect(page2.hlu).to eq nil
     end
   end
 end

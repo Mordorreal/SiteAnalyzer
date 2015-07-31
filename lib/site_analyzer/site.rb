@@ -16,7 +16,7 @@ module SiteAnalyzer
       @pages << Page.new(convert_to_valid(@main_url))
       scan_site!
     end
-
+    # check if page blocked by robot txt
     def robot_txt_allowed?(url)
       if @use_robot_txt
         Robotstxt.allowed?(url, '*') rescue nil
@@ -24,7 +24,7 @@ module SiteAnalyzer
         true
       end
     end
-
+    # scan pages: add page to scan, if still can scan do it, add new pages for scan from it and optimize massive of links
     def scan_site!
       add_pages_for_scan!
       while @pages_for_scan.size > 0
@@ -38,20 +38,20 @@ module SiteAnalyzer
         end
       end
     end
-
+    # add pages for scan array, also add bad pages to bad_pages array
     def add_pages_for_scan!
       @pages_for_scan = []
       @bad_pages = []
       @pages.each do |page|
-        @bad_pages << page.page_url unless page.page
-        if page.page
+        @bad_pages << page.page_url unless page.page_a_tags
+        if page.page_a_tags
           page.home_a.each do |link|
             @pages_for_scan << link
           end
         end
       end
     end
-
+    # create Page and add to to site
     def add_page(url)
       unless robot_txt_allowed?(url)
         @scanned_pages << url
@@ -61,42 +61,42 @@ module SiteAnalyzer
       @pages << page
       @scanned_pages << url
     end
-
+    # get all titles on site and return array of them
     def all_titles
       result = []
       @pages.each do |page|
-        if page.page
-          result << [page.page_url, page.titles]
+        if page.page_a_tags
+          result << [page.page_url, page.all_titles]
         end
       end
       result
     end
-
+    # get all meta description tags content and return it as array
     def all_descriptions
       result = []
       @pages.each do |page|
-        if page.page
-          result << [page.page_url, page.all_meta_description_content]
+        if page.page_a_tags
+          result << [page.page_url, page.meta_desc_content]
         end
       end
       result
     end
-
+    # get all h2 tags and return array of it
     def all_h2
       result = []
       @pages.each do |page|
-        unless page.page
-          result << [page.page_url, page.h2]
+        unless page.page_a_tags
+          result << [page.page_url, page.h2_text]
         end
       end
       result
     end
-
+    # get all a tags and return array of it
     def all_a
       result = []
       @pages.each do |page|
-        if page.page
-          page.all_a_tags.compact.each do |tag|
+        if page.page_a_tags
+          page.page_a_tags.compact.each do |tag|
             tag[0] = '-' unless tag[0]
             tag[1] = '-' unless tag[1]
             tag[2] = '-' unless tag[2]
@@ -106,29 +106,21 @@ module SiteAnalyzer
       end
       result.compact
     end
-
-    def pages_url
-      result = []
-      @pages.each do |page|
-         result << page.page_url if page.page
-      end
-      result
-    end
-
+    # get all non HLU url and return array
     def bad_urls
       result = []
       @pages.each do |page|
-        result << page.bad_url
+        result << page.hlu
       end
       result.compact!
     end
-
+    # get new array pages for scan and compact it
     def optimize_scan!
       @pages_for_scan = @pages_for_scan.compact.uniq
       @scanned_pages = @scanned_pages.compact.uniq
       @pages_for_scan = @pages_for_scan - @scanned_pages
     end
-
+    # check url and try to convert it to valid, remove .jpg links, add scheme to url
     def convert_to_valid(url)
       return nil if url =~ /.jpg$/i
       url.insert(0, @main_url.first(5)) if url.start_with? '//'

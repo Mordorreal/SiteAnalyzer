@@ -1,6 +1,6 @@
 # Tests of Report class
 require 'spec_helper'
-require_relative '../../../lib/site_analyzer/report'
+require 'site_analyzer'
 
 RSpec.describe SiteAnalyzer::Report do
   subject(:subject) { SiteAnalyzer::Report.new('http://savchuk.space', 10, false) }

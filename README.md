@@ -26,7 +26,7 @@ require 'site_analyzer'<br>
                                           
 SiteAnalyzer::Report.create site: 'http://savchuk.space', pages: 10, robot: false, console: true<br>
 Return hash with report.<br>
-arguments: site - url mast start from http or https, pages - number of pages to scan, robot - use or not robot.txt file, console - output to console
+arguments: site - url must start from http or https, pages - number of pages to scan, robot - use or not robot.txt file, console - output to console
 
 <br>
 <b>Author</b>

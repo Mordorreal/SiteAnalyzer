@@ -11,7 +11,7 @@ module SiteAnalyzer
       @use_robot = use_robot
       @site = Site.new(@site_domain, @max_pages, @use_robot)
     end
-
+    # Entry point for gem. Create and show report. return array, show in console if select
     def self.create(options)
       options[:robot] = false if options[:robot] == 'false'
       options[:console] = false if options[:console] == 'false'
@@ -40,7 +40,7 @@ module SiteAnalyzer
 
     def to_s
       return 'Report is empty' if @report.nil? || @report.empty?
-      header = Terminal::Table.new title: "Report for #{@site_domain} with #{@max_pages} pages max_pages and robot check is #{@use_robot}"
+      header = Terminal::Table.new title: "Report for #{@site_domain} with #{@max_pages} pages and robot.txt check is #{@use_robot}"
       puts header
       @report.each_pair do |key, value|
         rows = []
@@ -57,7 +57,7 @@ module SiteAnalyzer
     def check_titles_text_less_than_70
       result = []
       @site.pages.each do |page|
-        result << page.page_url unless page.title_good?
+        result << page.page_url unless page.title_good
       end
       result
     end
@@ -65,7 +65,7 @@ module SiteAnalyzer
     def check_title_and_h1_for_doubles
       result = []
       @site.pages.each do |page|
-        result << page.page_url unless page.title_and_h1_good?
+        result << page.page_url unless page.title_and_h1_good
       end
       result
     end
@@ -73,7 +73,7 @@ module SiteAnalyzer
     def check_meta_description
       result = []
       @site.pages.each do |page|
-        result << page.page_url unless page.metadescription_good?
+        result << page.page_url unless page.meta_description_good
       end
       result
     end
@@ -81,7 +81,7 @@ module SiteAnalyzer
     def check_meta_keywords_tags
       result = []
       @site.pages.each do |page|
-        result << page.page_url unless page.keywords_good?
+        result << page.page_url unless page.meta_keywords
       end
       result
     end
@@ -89,7 +89,7 @@ module SiteAnalyzer
     def check_h2
       result = []
       @site.pages.each do |page|
-        result << page.page_url unless page.h2?
+        result << page.page_url unless page.have_h2
       end
       result
     end
@@ -105,7 +105,7 @@ module SiteAnalyzer
     def code_more
       result = []
       @site.pages.each do |page|
-        result << page.page_url unless page.code_less?
+        result << page.page_url unless page.code_less
       end
       result
     end

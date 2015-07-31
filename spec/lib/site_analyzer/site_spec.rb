@@ -1,6 +1,6 @@
 # Tests of Site class
 require 'spec_helper'
-require_relative '../../../lib/site_analyzer/site'
+require 'site_analyzer'
 
 RSpec.describe SiteAnalyzer::Site do
   subject(:site) { SiteAnalyzer::Site.new initial_values, 10, false }
@@ -48,11 +48,6 @@ RSpec.describe SiteAnalyzer::Site do
       subject.scan_site!
       expect(subject.max_pages).to be < 0
       expect(subject.pages.size).to be >= 10
-    end
-  end
-  describe '#pages_url' do
-    it 'return array of pages url' do
-      expect(subject.pages_url.size).to be > 0
     end
   end
   describe '#optimize_scan!' do
