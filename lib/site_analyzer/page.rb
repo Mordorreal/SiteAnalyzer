@@ -79,7 +79,7 @@ module SiteAnalyzer
           @page_path = page.base_uri.request_uri
           @page = Nokogiri::HTML(page)
         end
-      rescue Timeout::Error, EOFError, OpenURI::HTTPError, Errno::ENOENT
+      rescue Timeout::Error, EOFError, OpenURI::HTTPError, Errno::ENOENT, TypeError
         return nil
       end
     end
