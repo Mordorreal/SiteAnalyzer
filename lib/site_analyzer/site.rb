@@ -29,13 +29,12 @@ module SiteAnalyzer
       add_pages_for_scan!
       while @pages_for_scan.size > 0
         page = convert_to_valid @pages_for_scan.pop
-        if page
-          @max_pages -= 1
-          add_page convert_to_valid(page)
-          return if @max_pages <= 0
-          add_pages_for_scan!
-          optimize_scan!
-        end
+        next unless page
+        @max_pages -= 1
+        add_page convert_to_valid(page)
+        return if @max_pages <= 0
+        add_pages_for_scan!
+        optimize_scan!
       end
     end
     # add pages for scan array, also add bad pages to bad_pages array
@@ -44,10 +43,9 @@ module SiteAnalyzer
       @bad_pages = []
       @pages.each do |page|
         @bad_pages << page.page_url unless page.page_a_tags
-        if page.page_a_tags
-          page.home_a.each do |link|
-            @pages_for_scan << link
-          end
+        next unless page.page_a_tags
+        page.home_a.each do |link|
+          @pages_for_scan << link
         end
       end
     end
@@ -65,9 +63,7 @@ module SiteAnalyzer
     def all_titles
       result = []
       @pages.each do |page|
-        if page.page_a_tags
-          result << [page.page_url, page.all_titles]
-        end
+        result << [page.page_url, page.all_titles] if page.page_a_tags
       end
       result
     end
@@ -75,9 +71,7 @@ module SiteAnalyzer
     def all_descriptions
       result = []
       @pages.each do |page|
-        if page.page_a_tags
-          result << [page.page_url, page.meta_desc_content]
-        end
+        result << [page.page_url, page.meta_desc_content] if page.page_a_tags
       end
       result
     end
@@ -85,9 +79,7 @@ module SiteAnalyzer
     def all_h2
       result = []
       @pages.each do |page|
-        unless page.page_a_tags
-          result << [page.page_url, page.h2_text]
-        end
+        result << [page.page_url, page.h2_text] unless page.page_a_tags
       end
       result
     end
@@ -95,13 +87,12 @@ module SiteAnalyzer
     def all_a
       result = []
       @pages.each do |page|
-        if page.page_a_tags
-          page.page_a_tags.compact.each do |tag|
-            tag[0] = '-' unless tag[0]
-            tag[1] = '-' unless tag[1]
-            tag[2] = '-' unless tag[2]
-            result << [page.page_url, tag[0], tag[1], tag[2]]
-          end
+        next unless page.page_a_tags
+        page.page_a_tags.compact.each do |tag|
+          tag[0] = '-' unless tag[0]
+          tag[1] = '-' unless tag[1]
+          tag[2] = '-' unless tag[2]
+          result << [page.page_url, tag[0], tag[1], tag[2]]
         end
       end
       result.compact
@@ -118,7 +109,7 @@ module SiteAnalyzer
     def optimize_scan!
       @pages_for_scan = @pages_for_scan.compact.uniq
       @scanned_pages = @scanned_pages.compact.uniq
-      @pages_for_scan = @pages_for_scan - @scanned_pages
+      @pages_for_scan -= @scanned_pages
     end
     # check url and try to convert it to valid, remove .jpg links, add scheme to url
     def convert_to_valid(url)

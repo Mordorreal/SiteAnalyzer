@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    site_analyzer (0.3.12)
+    site_analyzer (0.3.16)
       addressable (~> 2.3)
       nokogiri (~> 1.6)
       robotstxt (~> 0.5)
@@ -26,7 +26,7 @@ GEM
       shellany (~> 0.0)
       thor (>= 0.18.1)
     guard-compat (1.2.1)
-    guard-rspec (4.6.3)
+    guard-rspec (4.6.4)
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
@@ -81,4 +81,4 @@ DEPENDENCIES
   site_analyzer!
 
 BUNDLED WITH
-   1.10.5
+   1.10.6

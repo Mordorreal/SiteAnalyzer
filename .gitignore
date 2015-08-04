@@ -1,4 +1,7 @@
-/.idea/
+.idea/*
 SiteAnalyzer.iml
 /log
 *.gem
+.gems
+log
+tmp

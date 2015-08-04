@@ -1,5 +1,5 @@
 require 'spec_helper'
-require_relative '../../lib/site_analyzer'
+require 'site_analyzer'
 
 RSpec.describe SiteAnalyzer do
   it 'has a version number' do
@@ -12,12 +12,12 @@ RSpec.describe SiteAnalyzer do
     expect(SiteAnalyzer::Report.create site: 'http://mail.ru', pages: '10', robot: 'true').to be
   end
   it 'can make output to console' do
-    expect(SiteAnalyzer::Report.create site: 'http://www.placewoman.ru', pages: '100', robot: 'true', console: 'true').to be
+    expect(SiteAnalyzer::Report.create site: 'http://nash-farfor.ru/', pages: '600', robot: 'true', console: 'true').to be
   end
   it 'can return hash with report' do
     expect(SiteAnalyzer::Report.create site: 'http://mail.ru', pages: '10', robot: 'false').to be
   end
   it 'test of hash params' do
-    expect(SiteAnalyzer::Report.create({site: 'http://google.com', pages: "10", robot: 'false'})).to be
+    expect(SiteAnalyzer::Report.create(site: 'http://google.com', pages: '10', robot: 'false')).to be
   end
 end

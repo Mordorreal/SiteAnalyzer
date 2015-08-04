@@ -97,7 +97,7 @@ module SiteAnalyzer
     def pages_size
       result = []
       @site.pages.each do |page|
-        result << [page.page_url , page.page_text_size]
+        result << [page.page_url, page.page_text_size]
       end
       result
     end
@@ -144,10 +144,9 @@ module SiteAnalyzer
       counter = {}
       result = []
       in_array.compact.each do |url_desc_cont|
-        if url_desc_cont[1][0]
-          url_desc_cont[1][0].scan(/\w+/).each do |word|
-            all_words << word
-          end
+        next unless url_desc_cont[1][0]
+        url_desc_cont[1][0].scan(/\w+/).each do |word|
+          all_words << word
         end
       end
       all_words.each do |word|

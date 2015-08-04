@@ -7,7 +7,7 @@ RSpec.describe SiteAnalyzer::Site do
   let(:initial_values) { 'http://www.placewoman.ru' }
 
   describe '#all_titles' do
-    let(:initial_values) { 'http://mail.ru'}
+    let(:initial_values) { 'http://mail.ru' }
     it 'return array [page_url, title_tag_text]' do
       expect(subject.all_titles.size).to be > 0
     end
@@ -20,7 +20,7 @@ RSpec.describe SiteAnalyzer::Site do
   describe '#all_h2' do
     it 'return array [page_url, [h2_text]]' do
       expect(subject.all_h2).to be
-      expect(subject.all_h2.size).to be >=0
+      expect(subject.all_h2.size).to be >= 0
       expect(subject.all_h2).to be_an_instance_of Array
     end
   end

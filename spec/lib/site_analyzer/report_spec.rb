@@ -101,13 +101,13 @@ RSpec.describe SiteAnalyzer::Report do
     end
   end
   describe '#find_not_uniq_words(in_array)' do
-    let (:arr) { [['aport.ru', 'good wrong bad'],['mail.ru', 'hi privet'],['mail.ru/123', 'privet']] }
+    let(:arr) { [['aport.ru', 'good wrong bad'], ['mail.ru', 'hi privet'], ['mail.ru/123', 'privet']] }
     it 'find not uniq words in array of in_array must be [[url_of_page, words_in_string_with_space],[next, same_element]]' do
       expect(subject.find_not_uniq_words(arr).size).to be >= 0
     end
   end
   describe '#find_doubles(in_array)' do
-    let (:arr) { [['aport.ru', 'good wrong bad'],['mail.ru', 'hi privet'],['mail.ru/123', 'privet']] }
+    let(:arr) { [['aport.ru', 'good wrong bad'], ['mail.ru', 'hi privet'], ['mail.ru/123', 'privet']] }
     it 'find doubles in array and return array with page that have it' do
       expect(subject.find_doubles(arr).size).to be >= 0
       expect(subject.find_doubles(arr)).to be_an_instance_of Array
